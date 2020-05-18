@@ -151,8 +151,6 @@ void test05_PointTo::claMain()
 		this->pointTest01(a, b); // this指针调用本类方法
 		this->pointArray();
 
-
-
 	}
 
 	void test05_PointTo::pointTest01(int* p, int* a) {
