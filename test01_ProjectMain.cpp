@@ -1,23 +1,23 @@
+ï»¿
 
-
-// ÒýÈë¿âÍ·ÎÄ¼þ
+// å¼•å…¥åº“å¤´æ–‡ä»¶
 
 #include <fstream>
 
-//#include <iostream.h> // Í·ÎÄ¼þÓÐÀ©Õ¹ÃûÊ±¿ÉÒÔ²»ÓÃnamespace
+//#include <iostream.h> // å¤´æ–‡ä»¶æœ‰æ‰©å±•åæ—¶å¯ä»¥ä¸ç”¨namespace
 
-#include <iostream> // Ô¤´¦ÀíÆ÷±àÒëÖ¸Áî£¬include
-					// C++µÄÍ·ÎÄ¼þ¿ÉÒÔÊÇ.hµÄ»òÎÞÀ©Õ¹Ãû£¬CÓïÑÔµÄÊÇ.hµÄ
-
-
+#include <iostream> // é¢„å¤„ç†å™¨ç¼–è¯‘æŒ‡ä»¤ï¼Œinclude
+					// C++çš„å¤´æ–‡ä»¶å¯ä»¥æ˜¯.hçš„æˆ–æ— æ‰©å±•åï¼ŒCè¯­è¨€çš„æ˜¯.hçš„
 
 
 
-// ÒýÈëÀàÍ·ÎÄ¼þ
 
-// ×Ô¶¨ÒåÍ·ÎÄ¼þÔÚmain·½·¨ÖÐÒýÈë
-// .hÍ·ÎÄ¼þ»á±¨´í£¬±¨ÎÞ·¨½âÎöµÄÍâ²¿·ûºÅ£¬	µ«cppµÄ¿ÉÒÔ
-//#include"test11_binary_tree.h" // Í¬Ê±ÒýÈë.cppºÍ.h»áÒýÆðÖØ¸´±àÒëµÄ´íÎó
+
+// å¼•å…¥ç±»å¤´æ–‡ä»¶
+
+// è‡ªå®šä¹‰å¤´æ–‡ä»¶åœ¨mainæ–¹æ³•ä¸­å¼•å…¥
+// .hå¤´æ–‡ä»¶ä¼šæŠ¥é”™ï¼ŒæŠ¥æ— æ³•è§£æžçš„å¤–éƒ¨ç¬¦å·ï¼Œ	ä½†cppçš„å¯ä»¥
+//#include"test11_binary_tree.h" // åŒæ—¶å¼•å…¥.cppå’Œ.hä¼šå¼•èµ·é‡å¤ç¼–è¯‘çš„é”™è¯¯
 
 #include"test02_MinExample.h"
 #include"test03_BaseDataType.h"
@@ -25,31 +25,35 @@
 #include"test05_PointTo.h"
 
 
-// ËµÃ÷
-// ÏîÄ¿½á¹¹
-// @1£¬Ò»¸öÖ÷·½·¨£¬ÆäÓà°´ÖªÊ¶µã·ÖÎªÈô¸É¸öÀà£¬
-// @2£¬Êý¾ÝµÄÄ¬ÈÏ×÷ÓÃÓòÎª±¾Àà£¬Èç½á¹¹ÌåµÈ
-// @3£¬Ã¿¸öÀàÖÐÓÐÒ»¸öclaMain£¨£©·½·¨×÷Îªµ÷ÓÃ±¾ÀàµÄÈë¿Ú£¬ÀàÃûÎªtestxx_´óÍÕ·åµÄÐÎÊ½
-// @4£¬ÌØÊâÀà»áÓÐÏàËÆµÄÀàÃû
+// è¯´æ˜Ž
+// é¡¹ç›®ç»“æž„
+// @1ï¼Œä¸€ä¸ªä¸»æ–¹æ³•ï¼Œå…¶ä½™æŒ‰çŸ¥è¯†ç‚¹åˆ†ä¸ºè‹¥å¹²ä¸ªç±»ï¼Œ
+// @2ï¼Œæ•°æ®çš„é»˜è®¤ä½œç”¨åŸŸä¸ºæœ¬ç±»ï¼Œå¦‚ç»“æž„ä½“ç­‰
+// @3ï¼Œæ¯ä¸ªç±»ä¸­æœ‰ä¸€ä¸ªclaMainï¼ˆï¼‰æ–¹æ³•ä½œä¸ºè°ƒç”¨æœ¬ç±»çš„å…¥å£ï¼Œç±»åä¸ºtestxx_å¤§é©¼å³°çš„å½¢å¼
+// @4ï¼Œç‰¹æ®Šç±»ä¼šæœ‰ç›¸ä¼¼çš„ç±»å
+
+// winC++è¯´æ˜Žæ–‡æ¡£
+// æ¥æº
+// https://docs.microsoft.com/zh-cn/cpp/cpp/ptr32-ptr64?view=vs-2019
 
 
-using namespace std; // using±àÒëÖ¸Áî£¬ÃüÃû¿Õ¼ä£¬±£Ö¤ÃüÃû²»ÖØ¸´£¬·ÅÔÚº¯ÊýÄÚ±íÊ¾Ö»ÔÚ±¾º¯ÊýÄÚÊ¹ÓÃ
+using namespace std; // usingç¼–è¯‘æŒ‡ä»¤ï¼Œå‘½åç©ºé—´ï¼Œä¿è¯å‘½åä¸é‡å¤ï¼Œæ”¾åœ¨å‡½æ•°å†…è¡¨ç¤ºåªåœ¨æœ¬å‡½æ•°å†…ä½¿ç”¨
 
 
 
-int main() // º¯ÊýÍ·
-// Ò»¸öÀàÖÐÖ»ÄÜÓÐÒ»¸ömainº¯Êý
+int main() // å‡½æ•°å¤´
+// ä¸€ä¸ªç±»ä¸­åªèƒ½æœ‰ä¸€ä¸ªmainå‡½æ•°
 {
 	//char sa = NULL;
-	//scanf("%sa",sa); // C++ ¿ÉÒÔÊ¹ÓÃËùÓÐCµÄ±ê×¼ÊäÈëÊä³öº¯Êý£¬ºÃÏñÓÐ´í°¡
+	//scanf("%sa",sa); // C++ å¯ä»¥ä½¿ç”¨æ‰€æœ‰Cçš„æ ‡å‡†è¾“å…¥è¾“å‡ºå‡½æ•°ï¼Œå¥½åƒæœ‰é”™å•Š
 	//printf("%sa", sa);
-	printf("ÕâÊÇÖ÷ÀàµÄ \n");
-	cout << "Èë¿ÚÎÄ¼þµÄ";
-	cout << "Ö÷·½·¨" << "\n"; // endl¿ÉÓÃ¡°\n¡±´úÌæ
-	// printfÊÇCÖÐµÄ±ê×¼ÊäÈëÊä³öº¯Êý£¬¶øcoutÊÇiostreamÀàÖÐµÄ·½·¨£¬ÊÇ¶ÔÔËËã·ûµÄÖØÔØ
+	printf("è¿™æ˜¯ä¸»ç±»çš„ \n");
+	cout << "å…¥å£æ–‡ä»¶çš„";
+	cout << "ä¸»æ–¹æ³•" << "\n"; // endlå¯ç”¨â€œ\nâ€ä»£æ›¿
+	// printfæ˜¯Cä¸­çš„æ ‡å‡†è¾“å…¥è¾“å‡ºå‡½æ•°ï¼Œè€Œcoutæ˜¯iostreamç±»ä¸­çš„æ–¹æ³•ï¼Œæ˜¯å¯¹è¿ç®—ç¬¦çš„é‡è½½
 
-	std::cout << "<< " << endl; // endl±íÊ¾¹â±êÖØÆðÒ»ÐÐ£¬×÷ÓÃÀàËÆ»»ÐÐ·û\n
-	// << ÊÇ¶ÔÓÃËã·ûµÄÖØÔØ£¬±àÒëÆ÷×Ô¶¯¸ù¾ÝÉÏÏÂÎÄÅÐ¶Ï·ûºÅµÄÊµ¼Êº¬Òå£¬CÓïÑÔÖÐ &ºÍ*Ò²ÊÇÖØÔØ£¬±íÊ¾Î»ÔËËãºÍÂß¼­ÔËËã
+	std::cout << "<< " << endl; // endlè¡¨ç¤ºå…‰æ ‡é‡èµ·ä¸€è¡Œï¼Œä½œç”¨ç±»ä¼¼æ¢è¡Œç¬¦\n
+	// << æ˜¯å¯¹ç”¨ç®—ç¬¦çš„é‡è½½ï¼Œç¼–è¯‘å™¨è‡ªåŠ¨æ ¹æ®ä¸Šä¸‹æ–‡åˆ¤æ–­ç¬¦å·çš„å®žé™…å«ä¹‰ï¼ŒCè¯­è¨€ä¸­ &å’Œ*ä¹Ÿæ˜¯é‡è½½ï¼Œè¡¨ç¤ºä½è¿ç®—å’Œé€»è¾‘è¿ç®—
 
 
 	test02_MinExample t02me;
@@ -61,11 +65,9 @@ int main() // º¯ÊýÍ·
 	test04_Struct t04me;
 	//t04me.clsMain();
 
-	// new ¿ª±Ù¶ÑÄÚ´æ
-	test05_PointTo *te05me = new test05_PointTo();
-	te05me->claMain();
-
-
+	// new å¼€è¾Ÿå †å†…å­˜
+	test05_PointTo* te05me = new test05_PointTo();
+	te05me->classMain();
 
 
 

@@ -1,14 +1,15 @@
-#pragma once
+﻿#pragma once
 #include <iostream>
 
 
 class test05_PointTo
 {
 public:
-	void claMain();
+	void classMain();
 
 
 	void pointDef();
+	void operateMemory();
 	int add(int a, int b);
 	void pointSize();
 	void pointType();
@@ -18,5 +19,5 @@ public:
 	void pointTest01(int* p, int* a);
 	void pointTest02();
 
-};
 
+};
