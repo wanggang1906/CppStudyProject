@@ -1,9 +1,11 @@
 #include"test03_BaseDataType.h"
 #include <iostream>
 
-#include <string> // ÒıÈëstringÀà
-#include<cstring> // cÀàĞÍµÄstring
+#include <string> // å¼•å…¥stringç±»
+#include<cstring> // cç±»å‹çš„string
 
+
+// åŸºæœ¬æ•°æ®ç±»å‹
 
 void test03_BaseDataType::claMain()
 {
@@ -17,56 +19,53 @@ void test03_BaseDataType::claMain()
 
 
 
-
-
-
 using namespace std;
 
 int test03_BaseDataType::testString() {
 
-	std::string str; // ×Ö·û´®ÊÇÒ»¸ö¶ÔÏó£¬ÔÚC++±ê×¼¿âÖĞ£¬¹¦ÄÜ·Ç³£¶à£¬ÈçÌáÈ¡£¬±È½Ï£¬ËÑË÷×Ö·û´®
+	std::string str; // å­—ç¬¦ä¸²æ˜¯ä¸€ä¸ªå¯¹è±¡ï¼Œåœ¨C++æ ‡å‡†åº“ä¸­ï¼ŒåŠŸèƒ½éå¸¸å¤šï¼Œå¦‚æå–ï¼Œæ¯”è¾ƒï¼Œæœç´¢å­—ç¬¦ä¸²
 
-	cout << "ÊäÈëÒ»¸ö×Ö·û´®";
-	std::getline(std::cin, str); // getline()²»ÊÇiostreamÀàµÄ·½·¨£¬¶øÊÇÊ¹ÓÃstringÀàÖĞµÄÒ»¸öÓÑÔªº¯Êı
+	cout << "è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²";
+	std::getline(std::cin, str); // getline()ä¸æ˜¯iostreamç±»çš„æ–¹æ³•ï¼Œè€Œæ˜¯ä½¿ç”¨stringç±»ä¸­çš„ä¸€ä¸ªå‹å…ƒå‡½æ•°
 	cout << str;
 
-	char cstr[20] = "ee"; // ÓÃ×Ö·ûÊı×éÀ´³ĞÔØ×Ö·û´®
+	char cstr[20] = "ee"; // ç”¨å­—ç¬¦æ•°ç»„æ¥æ‰¿è½½å­—ç¬¦ä¸²
 	cout << cstr;
 
 	string sstr = "ss";
 	cout << sstr;
 
 	string in;
-	cin >> in; // cin¿ÉÒÔÊäÈë¶à¶Î×Ö·û´®
-	cout << "ÊäÈëµÄÄÚÈİÎª£º" << in << "\n";
+	cin >> in; // cinå¯ä»¥è¾“å…¥å¤šæ®µå­—ç¬¦ä¸²
+	cout << "è¾“å…¥çš„å†…å®¹ä¸ºï¼š" << in << "\n";
 	return 0;
 }
 
 
-// Ö¸Õë
-// Ö¸ÕëµÄ×÷ÓÃÊÇ´æ·ÅµØÖ·
-// ´´½¨Ö¸ÕëÊ±¿Õ¸ñ²»Ó°Ïì£¬Èçint *p; int * p; int* p;µÈÍ¬
-// *µÄÁ½ÖÖÓÃÍ¾£¬@1-´´½¨Ö¸Õë¡£@2-¶ÔÖ¸Õë½øĞĞ½âÒıÓÃ
-// ÔÊĞí¶à¸öÖ¸ÕëÖ¸ÏòÏàÍ¬µÄÖµ£¬ÇÒÍ¬²½¸Ä±ä
-// Ö§³ÖÎŞÀàĞÍÖ¸Õë£¬Èçvoid *vPointer£¬µ«½âÓ¦ÓÃÇ°Òª×ª»»ÎªÊÊµ±µÄÊı¾İÀàĞÍ
+// æŒ‡é’ˆ
+// æŒ‡é’ˆçš„ä½œç”¨æ˜¯å­˜æ”¾åœ°å€
+// åˆ›å»ºæŒ‡é’ˆæ—¶ç©ºæ ¼ä¸å½±å“ï¼Œå¦‚int *p; int * p; int* p;ç­‰åŒ
+// *çš„ä¸¤ç§ç”¨é€”ï¼Œ@1-åˆ›å»ºæŒ‡é’ˆã€‚@2-å¯¹æŒ‡é’ˆè¿›è¡Œè§£å¼•ç”¨
+// å…è®¸å¤šä¸ªæŒ‡é’ˆæŒ‡å‘ç›¸åŒçš„å€¼ï¼Œä¸”åŒæ­¥æ”¹å˜
+// æ”¯æŒæ— ç±»å‹æŒ‡é’ˆï¼Œå¦‚void *vPointerï¼Œä½†è§£åº”ç”¨å‰è¦è½¬æ¢ä¸ºé€‚å½“çš„æ•°æ®ç±»å‹
 int test03_BaseDataType::pointerTest()
 {
-	const unsigned short ITEM = 5; // ³£Á¿ ÎŞ·ûºÅ¶ÌÕûĞÍ
+	const unsigned short ITEM = 5; // å¸¸é‡ æ— ç¬¦å·çŸ­æ•´å‹
 	int intArray[ITEM] = { 1,2,3,4,5 };
 	char charArray[ITEM] = { 'f','i','s','a','q' };
 
 	int* intPtr = intArray;
 	char* charPtr = charArray;
-	std::cout << "ÕûĞÍÊı×éÊä³ö" << '\n';
+	std::cout << "æ•´å‹æ•°ç»„è¾“å‡º" << '\n';
 	for (int i = 0; i < ITEM; i++)
 	{
-		// reinterpret_cast<unsigned long>()ÊÇ¶ÔµØÖ·½øĞĞÇ¿ÖÆ×ª»»
+		// reinterpret_cast<unsigned long>()æ˜¯å¯¹åœ°å€è¿›è¡Œå¼ºåˆ¶è½¬æ¢
 		std::cout << *intPtr << " at " << reinterpret_cast<unsigned long>(intPtr)
 			<< '\n';
 		intPtr++;
 
 	}
-	std::cout << "×Ö·ûĞÍÊı×éÊä³ö" << '\n';
+	std::cout << "å­—ç¬¦å‹æ•°ç»„è¾“å‡º" << '\n';
 	for (int i = 0; i < ITEM; i++)
 	{
 		std::cout << *charPtr << " at " << reinterpret_cast<unsigned long>(charPtr)
@@ -77,88 +76,88 @@ int test03_BaseDataType::pointerTest()
 }
 
 
-// Êı¾İÀàĞÍ¼°ÆäËùÕ¼ÄÚ´æ¿Õ¼ä´óĞ¡
+// æ•°æ®ç±»å‹åŠå…¶æ‰€å å†…å­˜ç©ºé—´å¤§å°
 void test03_BaseDataType::dataSize() {
-	// »ù±¾Êı¾İÀàĞÍ
+	// åŸºæœ¬æ•°æ®ç±»å‹
 	int a;
 	float b;
 	double c;
 	bool d;
 	char e;
-	void; // ÎŞÀàĞÍ
-	wchar_t i; // ¿í×Ö·ûĞÍ
+	void; // æ— ç±»å‹
+	wchar_t i; // å®½å­—ç¬¦å‹
 	//std::cout<< 
 
-	// ËùÓĞÊı¾İÀàĞÍ
+	// æ‰€æœ‰æ•°æ®ç±»å‹
 	cout << "type: \t\t" << "************size**************" << endl;
-	cout << "bool: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(bool);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<bool>::max)(); // numeric_limitsÊÇC++µÄÄ£°åÀà£¬Ìá¹©»ù´¡Êı¾İµÄ¼«ÖµµÈÊıÑ§ĞÅÏ¢£¬ÆäÖĞµÄmax,minÊÇºê³£Á¿
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<bool>::min)() << endl;
+	cout << "bool: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(bool);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<bool>::max)(); // numeric_limitsæ˜¯C++çš„æ¨¡æ¿ç±»ï¼Œæä¾›åŸºç¡€æ•°æ®çš„æå€¼ç­‰æ•°å­¦ä¿¡æ¯ï¼Œå…¶ä¸­çš„max,minæ˜¯å®å¸¸é‡
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<bool>::min)() << endl;
 
-	cout << "char: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(char);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<char>::max)();
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<char>::min)() << endl;
+	cout << "char: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(char);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<char>::max)();
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<char>::min)() << endl;
 
-	cout << "signed char: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(signed char);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<signed char>::max)();
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<signed char>::min)() << endl;
+	cout << "signed char: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(signed char);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<signed char>::max)();
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<signed char>::min)() << endl;
 
-	cout << "unsigned char: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(unsigned char);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<unsigned char>::max)();
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<unsigned char>::min)() << endl;
+	cout << "unsigned char: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(unsigned char);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<unsigned char>::max)();
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<unsigned char>::min)() << endl;
 
-	cout << "wchar_t: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(wchar_t);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<wchar_t>::max)();
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<wchar_t>::min)() << endl;
+	cout << "wchar_t: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(wchar_t);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<wchar_t>::max)();
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<wchar_t>::min)() << endl;
 
-	cout << "short: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(short);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<short>::max)();
-	cout << "\t\t×îĞ¡Öµ£º" << (numeric_limits<short>::min)() << endl;
+	cout << "short: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(short);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<short>::max)();
+	cout << "\t\tæœ€å°å€¼ï¼š" << (numeric_limits<short>::min)() << endl;
 
-	cout << "int: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(int);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<int>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<int>::min)() << endl;
+	cout << "int: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(int);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<int>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<int>::min)() << endl;
 
-	cout << "unsigned: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(unsigned);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<unsigned>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<unsigned>::min)() << endl;
+	cout << "unsigned: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(unsigned);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<unsigned>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<unsigned>::min)() << endl;
 
-	cout << "long: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(long);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<long>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<long>::min)() << endl;
+	cout << "long: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(long);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<long>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<long>::min)() << endl;
 
-	cout << "unsigned long: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(unsigned long);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<unsigned long>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<unsigned long>::min)() << endl;
+	cout << "unsigned long: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(unsigned long);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<unsigned long>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<unsigned long>::min)() << endl;
 
-	cout << "double: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(double);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<double>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<double>::min)() << endl;
+	cout << "double: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(double);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<double>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<double>::min)() << endl;
 
-	cout << "long double: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(long double);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<long double>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<long double>::min)() << endl;
+	cout << "long double: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(long double);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<long double>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<long double>::min)() << endl;
 
-	cout << "float: \t\t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(float);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<float>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<float>::min)() << endl;
+	cout << "float: \t\t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(float);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<float>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<float>::min)() << endl;
 
-	cout << "size_t: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(size_t);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<size_t>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<size_t>::min)() << endl;
+	cout << "size_t: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(size_t);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<size_t>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<size_t>::min)() << endl;
 
-	cout << "string: \t" << "ËùÕ¼×Ö½ÚÊı£º" << sizeof(string);
-	cout << "\t×î´óÖµ£º" << (numeric_limits<string>::max)();
-	cout << "\t×îĞ¡Öµ£º" << (numeric_limits<string>::min)() << endl;
+	cout << "string: \t" << "æ‰€å å­—èŠ‚æ•°ï¼š" << sizeof(string);
+	cout << "\tæœ€å¤§å€¼ï¼š" << (numeric_limits<string>::max)();
+	cout << "\tæœ€å°å€¼ï¼š" << (numeric_limits<string>::min)() << endl;
 
 	cout << "type: \t\t" << "************size**************" << endl;
 }
 
 
 
-// Êı¾İÀàĞÍ¸´Ï°
+// æ•°æ®ç±»å‹å¤ä¹ 
 void test03_BaseDataType::dataType() {
-	std::cout << "Êı¾İ\n";
+	std::cout << "æ•°æ®\n";
 	int a;
 	std::cout << sizeof(a) << "\n";
 	float b;
