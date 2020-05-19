@@ -3,14 +3,15 @@
 
 #include<iostream>
 
+// ç»“æ„ä½“
 
 
 void test04_Struct::clsMain()
 {
-	// º¯Êı»ò½á¹¹ÖĞ·ÃÎÊÆä³ÉÔ±£¬ÍÆ¼öÊ¹ÓÃ -> 
+	// å‡½æ•°æˆ–ç»“æ„ä¸­è®¿é—®å…¶æˆå‘˜ï¼Œæ¨èä½¿ç”¨ -> 
 
-	structTe struTe = { 0,0 }; // Ê¹ÓÃÇ°Òª³õÊ¼»¯
-	structTe *struTe2 = new structTe; // new¿ª±Ù¶ÑÄÚ´æ
+	structTe struTe = { 0,0 }; // ä½¿ç”¨å‰è¦åˆå§‹åŒ–
+	structTe *struTe2 = new structTe; // newå¼€è¾Ÿå †å†…å­˜
 	struTe2->a = 8;
 	struTe2->b = 8;
 	structTe stu0;
@@ -22,7 +23,7 @@ void test04_Struct::clsMain()
 
 /*
 
-// ÀàÉùÃ÷Ç°ÖÃ --- ÀàÉùÃ÷ºÍÊµÏÖÔÚÍ¬Ò»¸öÎÄ¼şµÄÊÇÄÚÁª·½·¨µÄĞ´·¨
+// ç±»å£°æ˜å‰ç½® --- ç±»å£°æ˜å’Œå®ç°åœ¨åŒä¸€ä¸ªæ–‡ä»¶çš„æ˜¯å†…è”æ–¹æ³•çš„å†™æ³•
 // 
 
 //class StructClass;
@@ -31,7 +32,7 @@ class StructClass
 {
 
 private:
-	// ¶¨ÒåÁ½¸ö½á¹¹ÌåÊı¾İÀàĞÍ
+	// å®šä¹‰ä¸¤ä¸ªç»“æ„ä½“æ•°æ®ç±»å‹
 	typedef struct info {
 		std::string name;
 		int age;
@@ -42,14 +43,14 @@ private:
 	};
 
 
-	// ½á¹¹Ìå¶¨Òå
+	// ç»“æ„ä½“å®šä¹‰
 	typedef struct {
 		int data[2];
 		int length;
 	}SqList;
 
 
-	// ½á¹¹Ìå±ØĞëÒª³õÊ¼»¯
+	// ç»“æ„ä½“å¿…é¡»è¦åˆå§‹åŒ–
 
 
 public:
@@ -59,13 +60,13 @@ public:
 	}
 
 
-	// ½á¹¹Ìå
-	// .ºÍ -> µÄÇø±ğ£¬Èç½á¹¹±äÁ¿Ê±ÓÃ. Ö¸ÕëÖ¸ÏòÊ±ÓÃ ->
+	// ç»“æ„ä½“
+	// .å’Œ -> çš„åŒºåˆ«ï¼Œå¦‚ç»“æ„å˜é‡æ—¶ç”¨. æŒ‡é’ˆæŒ‡å‘æ—¶ç”¨ ->
 	int structureTypeTest()
 	{
 		struct FishOil
 		{
-			std::string name; // ×Ö·û´®¶ÔÏó
+			std::string name; // å­—ç¬¦ä¸²å¯¹è±¡
 			int age;
 			char sex;
 		};
@@ -73,14 +74,14 @@ public:
 	}
 
 
-	// Ê¹ÓÃÀàÖĞµÄ½á¹¹Ìå
+	// ä½¿ç”¨ç±»ä¸­çš„ç»“æ„ä½“
 
 	void getStructureOfClass()
 	{
 		struct info inf001 = { "",0 };
 		inf001.name = "inf01";
 		inf001.age = 10;
-		std::cout << "½á¹¹Ìå¶ÔÏóµÄµØÖ·£º" << &inf001 << "\n";
+		std::cout << "ç»“æ„ä½“å¯¹è±¡çš„åœ°å€ï¼š" << &inf001 << "\n";
 
 		//Inm02* inm002 = NULL;
 		//inm002->af = 20;
@@ -89,7 +90,7 @@ public:
 
 	}
 
-	// ½»»»Á½¸öÊı
+	// äº¤æ¢ä¸¤ä¸ªæ•°
 	void jiaoHuan()
 	{
 		int s = 1;
@@ -100,7 +101,7 @@ public:
 	void swap(int* x, int* y)
 	{
 		*x ^= *y;
-		*y ^= *x; // Òì»ò²Ù×÷
+		*y ^= *x; // å¼‚æˆ–æ“ä½œ
 		*x ^= *y;
 	}
 
@@ -113,21 +114,21 @@ public:
 
 
 
-// µ¥¶À²âÊÔÀàÖĞ¶¨Òå½á¹¹ÌåÖ¸Õë£¬²¢ÒıÓÃ
+// å•ç‹¬æµ‹è¯•ç±»ä¸­å®šä¹‰ç»“æ„ä½“æŒ‡é’ˆï¼Œå¹¶å¼•ç”¨
 
 
 
 
 
-// ½á¹¹Ìå×öº¯Êı²ÎÊı --- °´Öµ´«µİ
+// ç»“æ„ä½“åšå‡½æ•°å‚æ•° --- æŒ‰å€¼ä¼ é€’
 void test04_Struct::structTeOfFunction(structTe x) {
 	std::cout << "structTeOfFunction" << "\n";
-	// ¶¨ÒåÒ»¸ö½á¹¹Ìå±äÁ¿
-	structTe stTe = {1,2}; // Ê¹ÓÃÇ°Òª³õÊ¼»¯
+	// å®šä¹‰ä¸€ä¸ªç»“æ„ä½“å˜é‡
+	structTe stTe = {1,2}; // ä½¿ç”¨å‰è¦åˆå§‹åŒ–
 	std::cout << stTe.a;
 }
 
-// ½á¹¹Ìå×öº¯Êı·µ»ØÖµ
+// ç»“æ„ä½“åšå‡½æ•°è¿”å›å€¼
 test04_Struct::structTe test04_Struct::functionRequestStruct()
 {
 	test04_Struct::structTe se;
@@ -137,7 +138,7 @@ test04_Struct::structTe test04_Struct::functionRequestStruct()
 }
 
 
-// ½á¹¹ÌåÖ¸Õë×öº¯Êı²ÎÊı
+// ç»“æ„ä½“æŒ‡é’ˆåšå‡½æ•°å‚æ•°
 void test04_Struct::structTePointOfFun(structTe * x) {
 	std::cout << "structTePointOfFun" << "\n";
 	std::cout << x->b;
