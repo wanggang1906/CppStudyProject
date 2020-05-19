@@ -145,6 +145,7 @@
     <ClCompile Include="test05_PointTo.cpp" />
     <ClCompile Include="test06_Oop.cpp" />
     <ClCompile Include="test07_PointClass.cpp" />
+    <ClCompile Include="test10_ADTAndAlgorithms.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="test05_PointTo.h" />
     <ClInclude Include="test06_Oop.h" />
     <ClInclude Include="test07_PointClass.h" />
+    <ClInclude Include="test10_ADTAndAlgorithms.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

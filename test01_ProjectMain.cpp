@@ -24,6 +24,7 @@
 #include"test04_Struct.h"
 #include"test05_PointTo.h"
 #include "test06_Oop.h"
+#include "test10_ADTAndAlgorithms.h"
 
 
 
@@ -73,14 +74,10 @@ int main() // 函数头
 	//te05me->classMain();
 
 	test06_Oop* te06me = new test06_Oop();
-	te06me->classMain();
+	//te06me->classMain();
 
-
-
-
-
-
-
+	test10_ADTAndAlgorithms* te10me = new test10_ADTAndAlgorithms();
+	te10me->classMain();
 
 
 
