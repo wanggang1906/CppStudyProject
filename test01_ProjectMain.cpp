@@ -23,6 +23,9 @@
 #include"test03_BaseDataType.h"
 #include"test04_Struct.h"
 #include"test05_PointTo.h"
+#include "test06_Oop.h"
+
+
 
 
 // 说明
@@ -67,12 +70,10 @@ int main() // 函数头
 
 	// new 开辟堆内存
 	test05_PointTo* te05me = new test05_PointTo();
-	te05me->classMain();
+	//te05me->classMain();
 
-
-
-
-
+	test06_Oop* te06me = new test06_Oop();
+	te06me->classMain();
 
 
 

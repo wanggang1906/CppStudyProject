@@ -143,12 +143,14 @@
     <ClCompile Include="test03_BaseDataType.cpp" />
     <ClCompile Include="test04_Struct.cpp" />
     <ClCompile Include="test05_PointTo.cpp" />
+    <ClCompile Include="test06_Oop.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
     <ClInclude Include="test03_BaseDataType.h" />
     <ClInclude Include="test04_Struct.h" />
     <ClInclude Include="test05_PointTo.h" />
+    <ClInclude Include="test06_Oop.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

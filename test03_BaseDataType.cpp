@@ -1,4 +1,4 @@
-#include"test03_BaseDataType.h"
+﻿#include"test03_BaseDataType.h"
 #include <iostream>
 
 #include <string> // 引入string类
@@ -163,12 +163,3 @@ void test03_BaseDataType::dataType() {
 	float b;
 	std::cout << sizeof(b) << "\n";
 }
-
-
-
-
-
-
-
-
-
