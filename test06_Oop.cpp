@@ -1,6 +1,6 @@
 ﻿#include "test06_Oop.h"
 #include <iostream>
-#include<string>
+#include <string>
 
 
 
