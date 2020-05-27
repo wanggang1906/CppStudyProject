@@ -39,6 +39,27 @@
     <ClCompile Include="test10_ADTAndAlgorithms.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test11_ADTOfLinearList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test12_ADTOfStack.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test13_ADTOfQueue.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test14_ADTOfTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test15_ADTOfGraph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test16_AlgOfSearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test17_AlgOfSort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h">
@@ -60,6 +81,27 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="test10_ADTAndAlgorithms.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test11_ADTOfLinearList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test12_ADTOfStack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test13_ADTOfQueue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test14_ADTOfTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test15_ADTOfGraph.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test16_AlgOfSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test17_AlgOfSort.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

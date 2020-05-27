@@ -146,6 +146,13 @@
     <ClCompile Include="test06_Oop.cpp" />
     <ClCompile Include="test07_PointClass.cpp" />
     <ClCompile Include="test10_ADTAndAlgorithms.cpp" />
+    <ClCompile Include="test11_ADTOfLinearList.cpp" />
+    <ClCompile Include="test12_ADTOfStack.cpp" />
+    <ClCompile Include="test13_ADTOfQueue.cpp" />
+    <ClCompile Include="test14_ADTOfTree.cpp" />
+    <ClCompile Include="test15_ADTOfGraph.cpp" />
+    <ClCompile Include="test16_AlgOfSearch.cpp" />
+    <ClCompile Include="test17_AlgOfSort.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -155,6 +162,13 @@
     <ClInclude Include="test06_Oop.h" />
     <ClInclude Include="test07_PointClass.h" />
     <ClInclude Include="test10_ADTAndAlgorithms.h" />
+    <ClInclude Include="test11_ADTOfLinearList.h" />
+    <ClInclude Include="test12_ADTOfStack.h" />
+    <ClInclude Include="test13_ADTOfQueue.h" />
+    <ClInclude Include="test14_ADTOfTree.h" />
+    <ClInclude Include="test15_ADTOfGraph.h" />
+    <ClInclude Include="test16_AlgOfSearch.h" />
+    <ClInclude Include="test17_AlgOfSort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
