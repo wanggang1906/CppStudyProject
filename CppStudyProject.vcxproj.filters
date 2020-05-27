@@ -60,6 +60,9 @@
     <ClCompile Include="test17_AlgOfSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test20_StlAbstract.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h">
@@ -102,6 +105,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="test17_AlgOfSort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test20_StlAbstract.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

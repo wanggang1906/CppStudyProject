@@ -153,6 +153,7 @@
     <ClCompile Include="test15_ADTOfGraph.cpp" />
     <ClCompile Include="test16_AlgOfSearch.cpp" />
     <ClCompile Include="test17_AlgOfSort.cpp" />
+    <ClCompile Include="test20_StlAbstract.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -169,6 +170,7 @@
     <ClInclude Include="test15_ADTOfGraph.h" />
     <ClInclude Include="test16_AlgOfSearch.h" />
     <ClInclude Include="test17_AlgOfSort.h" />
+    <ClInclude Include="test20_StlAbstract.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
