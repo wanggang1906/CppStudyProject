@@ -4,7 +4,12 @@
 #include<iostream>
 
 // 结构体
-// 结构体可
+// 结构体可定义在类中，也可定义在类外，两者的作用域不同
+// 类里的结构体 - 定义在.h文件中
+// 使用时当成普通变量
+
+// 类外的结构体 - 定义在.h文件的class外
+// 使用时
 
 
 
@@ -39,14 +44,15 @@ void test04_Struct::clsMain()
 	stu0 = functionRequestStruct();
 	std::cout << stu0.b;
 	this->structTePointOfFun(struTe2);
+
+	// 结构体指针的初始化
+	structByExternalClass* sbec = new structByExternalClass;
+	sbec->sa = 2;
+	sbec->sb = 2;
+	this->useExternalClassStruct(sbec);
+
+
 }
-
-
-
-// 单独测试类中定义结构体指针，并引用
-
-
-
 
 
 // 结构体做函数参数 --- 按值传递
@@ -59,6 +65,7 @@ void test04_Struct::structTeOfFunction(structTe x)
 }
 
 // 结构体做函数返回值
+// 那个类::类里的结构体 哪个类::类中方法
 test04_Struct::structTe test04_Struct::functionRequestStruct()
 {
 	test04_Struct::structTe se;
@@ -72,6 +79,16 @@ test04_Struct::structTe test04_Struct::functionRequestStruct()
 void test04_Struct::structTePointOfFun(structTe* x)
 {
 	std::cout << "structTePointOfFun" << "\n";
-	std::cout << x->b;
-	std::cout << &x;
+	std::cout << x->b << "\n";
+	std::cout << &x << "\n";
+}
+
+
+// 使用类外的结构体，类外结构体指针做函数参数
+void test04_Struct::useExternalClassStruct(structByExternalClass* sbP)
+{
+	// 初始化结构体
+	structByExternalClass sbc = { 1,1 };
+	std::cout << "类外部的结构体：" << sbc.sb << "\n";
+	std::cout << "结构体参数：" << sbP->sa << "\n";
 }

@@ -1,9 +1,18 @@
-#pragma once
+ï»¿#pragma once
+
+
+
+// ç±»å¤–çš„ç»“æ„ä½“ structByExternalClass
+typedef struct structByExternalClass {
+	int sa;
+	int sb;
+};
+
 class test04_Struct
 {
 
-	// ÀàÖĞ¶¨Òå½á¹¹Ìå£¬×÷ÓÃÓòÎª±¾Àà
-	// ÀàÍâ¶¨Òå½á¹¹Ìå£¬×÷ÓÃÓò»áÀ©´ó
+	// ç±»ä¸­å®šä¹‰ç»“æ„ä½“ï¼Œä½œç”¨åŸŸä¸ºæœ¬ç±»
+	// ç±»å¤–å®šä¹‰ç»“æ„ä½“ï¼Œä½œç”¨åŸŸä¼šæ‰©å¤§
 	typedef struct structTe {
 		int a;
 		int b;
@@ -13,10 +22,10 @@ class test04_Struct
 public:
 	void clsMain();
 	void structTeOfFunction(structTe x);
-	void structTePointOfFun(structTe * x);
+	void structTePointOfFun(structTe* x);
 	structTe functionRequestStruct();
+	void useExternalClassStruct(structByExternalClass* sbP);
 
 
 
 };
-
