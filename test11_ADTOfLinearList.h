@@ -4,6 +4,8 @@ class test11_ADTOfLinearList
 
 
 	typedef char ElemType;
+#define MaxSize 10;
+	// constexpr auto MaxSize = 10;
 	//线性表结构体定义
 	typedef struct SqList {
 		ElemType data[10]; //存放线性表的数据域
@@ -13,6 +15,12 @@ class test11_ADTOfLinearList
 
 
 public:
+
+	bool insertOfSequenceList(SqList& L, int i, ElemType e);
+	bool deleteOfSequenceList(SqList& L, int i, ElemType& e);
+
+
+
 	void classMain();
 	void intiSqList(SqList*& L);
 	void creatSqList(SqList*& L, ElemType a[], int n);

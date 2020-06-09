@@ -14,6 +14,7 @@
 //			单向链表 - 如果一个节点将指向另外一个节点的指针作为数据成员，那么多个这样的节点可以连接起来，只用一个变量就能够访问整个节点序列。
 //			双向链表
 //			循环链表
+//			静态链表 - 静态数组
 
 
 void test11_ADTOfLinearList::classMain()
@@ -21,6 +22,97 @@ void test11_ADTOfLinearList::classMain()
 	std::cout << "test11_ADTOfLinearList" << "\n";
 }
 
+// 顺序表的基本操作
+
+// 插入 - 把e插入到L的第i个位置
+bool test11_ADTOfLinearList::insertOfSequenceList(SqList& L, int i, ElemType e)
+{
+	// 判断i是否有效 - i的范围在顺序表的合理范围内
+	if (i<1 || i>L.length + 1)
+	{
+		return false;
+	}
+	// 判断顺序表是否已满
+	if (L.length = 10)
+	{
+		return false;
+	}
+	// 后移length-i个元素
+	for (int j = L.length; j >= i; j--)
+	{
+		L.data[j] = L.data[j - 1];
+	}
+	// 插入
+	L.data[i - 1] = e;
+	// 表长+1
+	L.length++;
+	return true;
+}
+
+
+// 删除
+bool test11_ADTOfLinearList::deleteOfSequenceList(SqList& L, int i, ElemType& e)
+{
+	// 判断删除位置有效
+	if (i<1 || i>L.length)
+	{
+		return false;
+	}
+	// 把要删除的元素赋值给e
+	e = L.data[i - 1];
+	// 后续元素前移
+	for (int j = i; j < L.length; j++)
+	{
+		L.data[j - 1] = L.data[j];
+	}
+	// 长度-1
+	L.length--;
+	return true;
+}
+
+
+
+// 按值查找
+
+
+
+
+// 单链表的基本操作
+
+// 头插法建立单链表
+
+// 尾插法建立单链表
+
+
+// 按序号查找节点值
+
+// 按值查找表节点
+
+// 插入节点操作
+
+// 删除节点操作
+
+// 求表长操作
+
+
+
+// 双链表
+
+// 双链表的插入操作
+
+// 双链表的删除操作
+
+
+// 循环链单链表
+
+// 循环双链表
+
+// 静态链表
+
+
+
+
+// 链表的基本操作
 
 //【1】、初始化线性表L
 void test11_ADTOfLinearList::intiSqList(SqList*& L)
