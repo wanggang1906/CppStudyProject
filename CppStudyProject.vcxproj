@@ -143,6 +143,7 @@
     <ClCompile Include="test03_BaseDataType.cpp" />
     <ClCompile Include="test04_Struct.cpp" />
     <ClCompile Include="test05_PointTo.cpp" />
+    <ClCompile Include="test06_2_Oop.cpp" />
     <ClCompile Include="test06_Oop.cpp" />
     <ClCompile Include="test07_PointClass.cpp" />
     <ClCompile Include="test10_ADTAndAlgorithms.cpp" />

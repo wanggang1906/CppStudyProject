@@ -13,10 +13,11 @@
 
 
 
-// 引入类头文件
+// 引入各类的头文件
 
 // 自定义头文件在main方法中引入
 // .h头文件会报错，报无法解析的外部符号，	但cpp的可以
+// vs自动生成的类可以导入.h文件
 //#include"test11_binary_tree.h" // 同时引入.cpp和.h会引起重复编译的错误
 
 #include"test02_MinExample.h"
@@ -33,8 +34,11 @@
 // 项目结构
 // @1，一个主方法，其余按知识点分为若干个类，
 // @2，数据的默认作用域为本类，如结构体等
-// @3，每个类中有一个claMain（）方法作为调用本类的入口，类名为testxx_大驼峰的形式
+// @3，每个类中有一个claMain（）方法作为调用本类的入口，类名为test0x_大驼峰的形式
 // @4，特殊类会有相似的类名
+// @5，外部文件中的函数的使用
+//		#1 - 定义外部函数实现的cpp文件
+//		#2 - 在主类中先声明，再使用
 
 // winC++说明文档
 // 来源
@@ -67,7 +71,7 @@ int main() // 函数头
 	//t03me.claMain();
 
 	test04_Struct t04me;
-	//t04me.clsMain();
+	t04me.clsMain();
 
 	// new 开辟堆内存
 	test05_PointTo* te05me = new test05_PointTo();
@@ -77,7 +81,7 @@ int main() // 函数头
 	//te06me->classMain();
 
 	test10_ADTAndAlgorithms* te10me = new test10_ADTAndAlgorithms();
-	te10me->classMain();
+	//te10me->classMain();
 
 
 

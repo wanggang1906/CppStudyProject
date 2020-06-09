@@ -63,6 +63,9 @@
     <ClCompile Include="test20_StlAbstract.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test06_2_Oop.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h">

@@ -203,6 +203,3 @@ void test05_PointTo::pointTest02() {
 	int* ptr2 = (int*)((int)a + 1);
 	printf("%x,%x", ptr1[-1], *ptr2);
 }
-
-
-// 保存插件

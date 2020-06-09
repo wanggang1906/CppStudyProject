@@ -4,14 +4,34 @@
 #include<iostream>
 
 // 结构体
+// 结构体可
 
+
+
+
+
+// .h和.cpp文件分别写的内容
+// @1 - .h文件
+//		写类的声明(包括类里面的成员和方法声明)，函数原型，#define常数宏等，一般不写具体的实现
+//		一般加预编译语句，防止重复编译 #ifndef CIRCLE_H(名称一般为头文件_H)   #define CIRCLE_H   //你的代码写在这里   #endif
+//		头文件中只处理常量，变量，函数，类的声明，所有实现都在源文件中。头文件不编译，每个cpp文件会被编译成.obj文件
+//			然后所有obj文件连接起来形成可执行程序
+// @2 - .cpp文件
+//		写头文件中已经声明的函数的具体代码，在开头必须#include一下要实现的头文件，以及其他要用到的头文件
+//		是
+//@3 - package
+//		定义 - 一个package是由同名的.h和.cpp文件组成，但可以少任意一个，若只有.h文件，则package是接口/模板(template)的定义
+//			只有.cpp的package可以是一个程序的入口
+//		参考 - https://www.cnblogs.com/fenghuan/p/4794514.html
+//
+//
 
 void test04_Struct::clsMain()
 {
-	// 函数或结构中访问其成员，推荐使用 -> 
+	// 函数或结构中访问其成员，推荐使用(箭头，表示指向，指针) -> 
 
 	structTe struTe = { 0,0 }; // 使用前要初始化
-	structTe *struTe2 = new structTe; // new开辟堆内存
+	structTe* struTe2 = new structTe; // new开辟堆内存
 	struTe2->a = 8;
 	struTe2->b = 8;
 	structTe stu0;
@@ -20,97 +40,6 @@ void test04_Struct::clsMain()
 	std::cout << stu0.b;
 	this->structTePointOfFun(struTe2);
 }
-
-/*
-
-// 类声明前置 --- 类声明和实现在同一个文件的是内联方法的写法
-// 
-
-//class StructClass;
-
-class StructClass
-{
-
-private:
-	// 定义两个结构体数据类型
-	typedef struct info {
-		std::string name;
-		int age;
-	};
-
-	typedef struct infoName {
-		int af;
-	};
-
-
-	// 结构体定义
-	typedef struct {
-		int data[2];
-		int length;
-	}SqList;
-
-
-	// 结构体必须要初始化
-
-
-public:
-	void structureTestMain()
-	{
-		this->getStructureOfClass();
-	}
-
-
-	// 结构体
-	// .和 -> 的区别，如结构变量时用. 指针指向时用 ->
-	int structureTypeTest()
-	{
-		struct FishOil
-		{
-			std::string name; // 字符串对象
-			int age;
-			char sex;
-		};
-		return 0;
-	}
-
-
-	// 使用类中的结构体
-
-	void getStructureOfClass()
-	{
-		struct info inf001 = { "",0 };
-		inf001.name = "inf01";
-		inf001.age = 10;
-		std::cout << "结构体对象的地址：" << &inf001 << "\n";
-
-		//Inm02* inm002 = NULL;
-		//inm002->af = 20;
-		//std::cout << inm002->af << "\n";
-
-
-	}
-
-	// 交换两个数
-	void jiaoHuan()
-	{
-		int s = 1;
-		int d = 2;
-		//swap(&s, &d);
-	}
-
-	void swap(int* x, int* y)
-	{
-		*x ^= *y;
-		*y ^= *x; // 异或操作
-		*x ^= *y;
-	}
-
-
-
-
-};
-
-*/
 
 
 
@@ -121,10 +50,11 @@ public:
 
 
 // 结构体做函数参数 --- 按值传递
-void test04_Struct::structTeOfFunction(structTe x) {
+void test04_Struct::structTeOfFunction(structTe x)
+{
 	std::cout << "structTeOfFunction" << "\n";
 	// 定义一个结构体变量
-	structTe stTe = {1,2}; // 使用前要初始化
+	structTe stTe = { 1,2 }; // 使用前要初始化
 	std::cout << stTe.a;
 }
 
@@ -139,10 +69,9 @@ test04_Struct::structTe test04_Struct::functionRequestStruct()
 
 
 // 结构体指针做函数参数
-void test04_Struct::structTePointOfFun(structTe * x) {
+void test04_Struct::structTePointOfFun(structTe* x)
+{
 	std::cout << "structTePointOfFun" << "\n";
 	std::cout << x->b;
 	std::cout << &x;
 }
-
-
