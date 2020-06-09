@@ -26,6 +26,14 @@
 #include"test05_PointTo.h"
 #include "test06_Oop.h"
 #include "test10_ADTAndAlgorithms.h"
+#include "test11_ADTOfLinearList.h"
+#include "test12_ADTOfStack.h"
+#include "test13_ADTOfQueue.h"
+#include "test14_ADTOfTree.h"
+#include "test15_ADTOfGraph.h"
+#include "test16_AlgOfSearch.h"
+#include "test17_AlgOfSort.h"
+#include "test20_StlAbstract.h"
 
 
 
@@ -64,6 +72,7 @@ int main() // 函数头
 	// << 是对用算符的重载，编译器自动根据上下文判断符号的实际含义，C语言中 &和*也是重载，表示位运算和逻辑运算
 
 
+
 	test02_MinExample t02me;
 	//t02me.claMain();
 
@@ -71,7 +80,7 @@ int main() // 函数头
 	//t03me.claMain();
 
 	test04_Struct t04me;
-	t04me.clsMain();
+	//t04me.clsMain();
 
 	// new 开辟堆内存
 	test05_PointTo* te05me = new test05_PointTo();
@@ -83,7 +92,72 @@ int main() // 函数头
 	test10_ADTAndAlgorithms* te10me = new test10_ADTAndAlgorithms();
 	//te10me->classMain();
 
+	// 统一类实例的初始化
+	test11_ADTOfLinearList te11me;
+	test12_ADTOfStack* te12me = new test12_ADTOfStack();
+	test13_ADTOfQueue te13me;
+	test14_ADTOfTree te14me;
+	test15_ADTOfGraph te15me;
+	test16_AlgOfSearch te16me;
+	test17_AlgOfSort te17me;
 
+
+
+
+	// 使用switch-case实现选择跳转
+
+	int choice;
+	//等待用户选择菜单项
+	while (1)
+	{
+		printf("\n输入类编号: ");
+		std::cin >> choice;
+		//根据用户不同的选择，调用相应的函数               
+		switch (choice)
+		{
+		case 2:
+			t02me.claMain();
+			break;
+		case 3:
+			t03me.claMain();
+			break;
+		case 4:
+			t04me.clsMain();
+			break;
+		case 5:
+			te05me->classMain();
+			break;
+		case 6:
+			te06me->classMain();
+			break;
+		case 10:
+			te10me->classMain();
+			break;
+		case 11:
+			te11me.classMain();
+			break;
+		case 12:
+			te12me->classMain();
+			break;
+		case 13:
+			te13me.classMain();
+			break;
+		case 14:
+			te14me.classMain();
+			break;
+		case 15:
+			te15me.classMain();
+			break;
+		case 16:
+			te16me.classMain();
+			break;
+		case 17:
+			te17me.classMain();
+			break;
+		default:
+			printf("\n无效的输入!\n");
+		}
+	}
 
 	return 0;
 }
