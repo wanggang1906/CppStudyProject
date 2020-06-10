@@ -107,12 +107,12 @@ int main() // 函数头
 	// 使用switch-case实现选择跳转
 
 	int choice;
-
+	printf("\n输入类编号: ");
+	std::cin >> choice;
+	//scanf_s("%d", &choice);
 	//等待用户选择菜单项
-	while (1)
+	while (1 && choice != 9999) // && 逻辑与，&按位与
 	{
-		printf("\n输入类编号: ");
-		std::cin >> choice;
 		//根据用户不同的选择，调用相应的函数               
 		switch (choice)
 		{
@@ -158,6 +158,9 @@ int main() // 函数头
 		default:
 			printf("\n无效的输入!\n");
 		}
+		printf("\n输入类编号: ");
+		std::cin >> choice;
+		//scanf_s("%d", &choice);
 	}
 
 	return 0;

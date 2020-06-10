@@ -164,15 +164,24 @@ test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHead(LinkLis
 	return L;
 }
 
-// 打印链表
+// 打印链表 - 从头节点开始，一次遍历输出链表
+// 有/无头节点，会影响第一个输出，
+// 头/尾插法会影响输出的顺序
 void test11_ADTOfLinearList::printList(LinkList& L)
 {
 	LNode* p = L;
 	p->next = L->next;
+	// 第一个节点，数据域没有利用的和有利用的
+	// 输出中间节点
 	while (p->next != NULL)
 	{
-		std::cout << L->data << " ";
+		std::cout << p->data << " ";
 		p = p->next;
+	}
+	// 输出最后一个节点
+	if (p->next == NULL)
+	{
+		std::cout << p->data << "\n";
 	}
 	std::cout << "链表打印完毕" << "\n";
 }
