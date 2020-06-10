@@ -3,7 +3,7 @@ class test11_ADTOfLinearList
 {
 
 
-	typedef char ElemType;
+	typedef int ElemType;
 #define MaxSize 10;
 	// constexpr auto MaxSize = 10;
 	//线性表结构体定义
@@ -39,12 +39,15 @@ class test11_ADTOfLinearList
 
 public:
 
+	SqList creatSequenceList();
 	bool insertOfSequenceList(SqList& L, int i, ElemType e);
 	bool deleteOfSequenceList(SqList& L, int i, ElemType& e);
 	int findElem(SqList L, ElemType e);
+	void printSequenceList(SqList& L);
 
 
-	LinkList creatListOfHeader(LinkList& L);
+	LinkList creatListOfHead(LinkList& L);
+	void printList(LinkList& L);
 	LinkList creatListOfFinal(LinkList& L);
 	LNode* getElemByNum(LinkList L, int i);
 	LNode* findElemByValue(LinkList L, ElemType e);

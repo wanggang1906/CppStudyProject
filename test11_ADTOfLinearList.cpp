@@ -28,9 +28,42 @@
 void test11_ADTOfLinearList::classMain()
 {
 	std::cout << "test11_ADTOfLinearList" << "\n";
+	// 顺序表
+	//SqList sequenceList;
+	//sequenceList = this->creatSequenceList();
+	//this->printSequenceList(sequenceList);
+	//this->insertOfSequenceList(sequenceList, 3, 9);
+	//this->printSequenceList(sequenceList);
+	//ElemType e = 999;
+	//this->deleteOfSequenceList(sequenceList, 3, e);
+	//std::cout << "被删除的元素为：" << e << "\n";
+	//std::cout << "查找的元素位序为：" << this->findElem(sequenceList, 2) << "\n";
+
+	// 单链表
+	LinkList linkList, lList;
+	lList = this->creatListOfHead(linkList);
+	this->printList(lList);
+
+
+
+	// 双链表
+
 }
 
 // 顺序表的基本操作
+// 建立顺序表 - 先初始化length=0，再赋值data[]
+test11_ADTOfLinearList::SqList test11_ADTOfLinearList::creatSequenceList()
+{
+	int sequenceListLength = 5;
+	SqList L;
+	L.length = 0;
+	for (int i = 0; i < sequenceListLength; i++)
+	{
+		L.data[i] = i;
+		L.length++;
+	}
+	return L;
+}
 
 // 插入 - 把e插入到L的第i个位置
 bool test11_ADTOfLinearList::insertOfSequenceList(SqList& L, int i, ElemType e)
@@ -41,7 +74,7 @@ bool test11_ADTOfLinearList::insertOfSequenceList(SqList& L, int i, ElemType e)
 		return false;
 	}
 	// 判断顺序表是否已满
-	if (L.length = 10)
+	if (L.length == 10)
 	{
 		return false;
 	}
@@ -57,8 +90,7 @@ bool test11_ADTOfLinearList::insertOfSequenceList(SqList& L, int i, ElemType e)
 	return true;
 }
 
-
-// 删除
+// 删除 - 删除i位置的元素，e接受要删除的元素
 bool test11_ADTOfLinearList::deleteOfSequenceList(SqList& L, int i, ElemType& e)
 {
 	// 判断删除位置有效
@@ -78,9 +110,7 @@ bool test11_ADTOfLinearList::deleteOfSequenceList(SqList& L, int i, ElemType& e)
 	return true;
 }
 
-
-
-// 按值查找 - 顺序查找
+// 按值查找 - 顺序查找，并返回元素位序
 int test11_ADTOfLinearList::findElem(SqList L, ElemType e)
 {
 	// 从头开始遍历链表，若data域相等，则返回元素位置(位序)，不存在则返回0
@@ -95,13 +125,24 @@ int test11_ADTOfLinearList::findElem(SqList L, ElemType e)
 	return 0;
 }
 
+// 打印顺序表 - 顺序表从0开始计数
+void test11_ADTOfLinearList::printSequenceList(SqList& L)
+{
+	// 
+	for (int i = 0; i < L.length; i++)
+	{
+		std::cout << L.data[i] << " ";
+	}
+	std::cout << "顺序表打印完毕" << "\n";
+}
+
 
 
 
 // 单链表的基本操作
 
 // 头插法建立单链表 - 从表尾到表头逆向建立单链表L，每次均在头节点之后插入元素
-test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHeader(LinkList& L)
+test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHead(LinkList& L)
 {
 	LNode* s;
 	int x;
@@ -121,6 +162,19 @@ test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHeader(LinkL
 		scanf_s("%d", &x);
 	}
 	return L;
+}
+
+// 打印链表
+void test11_ADTOfLinearList::printList(LinkList& L)
+{
+	LNode* p = L;
+	p->next = L->next;
+	while (p->next != NULL)
+	{
+		std::cout << L->data << " ";
+		p = p->next;
+	}
+	std::cout << "链表打印完毕" << "\n";
 }
 
 // 尾插法建立单链表
