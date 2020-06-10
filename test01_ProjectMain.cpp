@@ -107,6 +107,7 @@ int main() // 函数头
 	// 使用switch-case实现选择跳转
 
 	int choice;
+
 	//等待用户选择菜单项
 	while (1)
 	{

@@ -17,6 +17,14 @@
 //			静态链表 - 静态数组
 
 
+// 一些语法，函数
+// @1 - new/delete是C++的操作符，而malloc/free是C中的函数
+// @2 - new做两件事，一是分配内存，二是调用类的构造函数；同样，delete会调用类的析构函数和释放内存。而malloc和free只是分配和释放内存
+// @3 - new建立的是一个对象，而malloc分配的是一块内存；new建立的对象可以用成员函数访问，不要直接访问它的地址空间；malloc分配的是一块内存
+//			区域，用指针访问，可以在里面移动指针；new出来的指针是带有类型信息的，而malloc返回的是void指针
+// exit() - 进程退出
+// friend 类型 函数名(形参) - 友元函数
+
 void test11_ADTOfLinearList::classMain()
 {
 	std::cout << "test11_ADTOfLinearList" << "\n";
@@ -72,35 +80,258 @@ bool test11_ADTOfLinearList::deleteOfSequenceList(SqList& L, int i, ElemType& e)
 
 
 
-// 按值查找
+// 按值查找 - 顺序查找
+int test11_ADTOfLinearList::findElem(SqList L, ElemType e)
+{
+	// 从头开始遍历链表，若data域相等，则返回元素位置(位序)，不存在则返回0
+	for (int j = 0; j <= L.length; j++)
+	{
+		if (e == L.data[j])
+		{
+			// 下标位j的元素值等于呃，返回其位序j + 1
+			return j + 1;
+		}
+	}
+	return 0;
+}
 
 
 
 
 // 单链表的基本操作
 
-// 头插法建立单链表
+// 头插法建立单链表 - 从表尾到表头逆向建立单链表L，每次均在头节点之后插入元素
+test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHeader(LinkList& L)
+{
+	LNode* s;
+	int x;
+	// 创建头节点
+	L = (LinkList)malloc(sizeof(LNode));
+	// 初始链表为空
+	L->next = NULL;
+	// 输入节点值，为9999表示结束
+	scanf_s("%d", &x);
+	while (9999 != x)
+	{
+		// 创建新节点
+		s = (LNode*)malloc(sizeof(LNode));
+		s->data = x;
+		s->next = L->next;
+		L->next = s; // 将新节点插入表中，L为头指针
+		scanf_s("%d", &x);
+	}
+	return L;
+}
 
 // 尾插法建立单链表
+test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfFinal(LinkList& L)
+{
+	int x;
+	L = (LinkList)malloc(sizeof(LNode));
+	LNode* s, * r = L;
+	scanf_s("%d", &x);
+	while (999 != x)
+	{
+		s = (LNode*)malloc(sizeof(LNode));
+		s->data = x;
+		r->next = s;
+		r = s;
+		scanf_s("%d", &x);
+	}
+	r->next = NULL;
+	return L;
+}
 
 
 // 按序号查找节点值
+test11_ADTOfLinearList::LNode* test11_ADTOfLinearList::getElemByNum(LinkList L, int i)
+{
+	int j = 1;
+	LNode* p = L->next;
+	if (i == 0)
+	{
+		return L;
+	}
+	if (i < 1)
+	{
+		return NULL;
+	}
+	while (p && j < i)
+	{
+		p = p->next;
+		j++;
+	}
+	return p;
+}
+
 
 // 按值查找表节点
+test11_ADTOfLinearList::LNode* test11_ADTOfLinearList::findElemByValue(LinkList L, ElemType e)
+{
+	LNode* p = L->next;
+	while (p != NULL && p->data != e)
+	{
+		p = p->next;
+	}
+	return p;
+}
 
-// 插入节点操作
+
+// 插入节点操作 - 将值为x的新节点，插入到单链表的第i个位置上
+bool test11_ADTOfLinearList::insertNode(LinkList L, int i, int x)
+{
+	LNode* newNode;
+	// 检查插入位置的有效 - 如何获得链表总长度
+	if (i < 1)
+	{
+		return false;
+	}
+	// 定义一个新节点
+	newNode = (LNode*)malloc(sizeof(LNode));
+	newNode->data = x;
+	// 创建指向头节点的指针
+	LNode* p = L->next;
+	// 找到插入位置的前驱节点i-1
+	int j = 1;
+	while (j <= i - 1)
+	{
+		p = p->next;
+		j++;
+	}
+	// 新节点插入到前驱
+	newNode->next = p->next;
+	// 旧的后续节点插入到新节点后
+	p->next = newNode;
+	return true;
+}
+
+bool test11_ADTOfLinearList::insertNode2(LinkList L, int i, int x)
+{
+	LNode* p; // 一个指针，一个新的数据节点
+	LNode* s;
+	s = (LNode*)malloc(sizeof(LNode));
+	s->data = x;
+
+	// 判断插入位置合法
+	if (i < 1)
+	{
+		return false;
+	}
+
+	p = this->getElemByNum(L, i - 1);
+	s->next = p->next;
+	p->next = s;
+	return true;
+}
 
 // 删除节点操作
+bool test11_ADTOfLinearList::deletdNode(LinkList L, int i)
+{
+	LNode* p;
+	LNode* q;
+	// 判断删除位置合法
+	if (i < 1)
+	{
+		return false;
+	}
+	// p指针指向要删除的位置i-1
+	p = this->getElemByNum(L, i - 1);
+	// q指向要删除的节点
+	q = p->next;
+	// 将*q节点从链中断开
+	p->next = q->next;
+	// 释放q节点
+	free(q);
+	return true;
+}
 
-// 求表长操作
-
+// 求表长操作 - 单链表的表长不包含头节点，所以不带头和带头节点的计算发放略有不同，不带头的表为空时要单独处理
+int test11_ADTOfLinearList::getListLength(LinkList L)
+{
+	int ListLength = 0;
+	LNode* p = NULL;
+	p->next = L->next;
+	// 带头节点
+	while (p->next != NULL)
+	{
+		p = p->next;
+		ListLength++;
+	}
+	return ListLength;
+}
 
 
 // 双链表
 
+// 创建双链表
+test11_ADTOfLinearList::DNode* test11_ADTOfLinearList::creatDNodeList()
+{
+	DNode* head, * p, * s;
+	int x, cycle = 1;
+	head = (DNode*)malloc(sizeof(DNode));
+	p = head;
+	while (cycle)
+	{
+		std::cout << "输入数据：" << "\n";
+		std::cin >> x;
+		if (x != 0)
+		{
+			s = (DNode*)malloc(sizeof(DNode));
+			s->data = x;
+			p->next = s;
+			s->prior = p;
+			p = s;
+		}
+		else
+			cycle = 0;
+	}
+	head = head->next;
+	head->prior = NULL;
+	p->next = NULL;
+	return head;
+}
+
+// 打印链表
+void test11_ADTOfLinearList::printDNode(DNode* head)
+{
+	DNode* p, * s;
+	p = head;
+	std::cout << "打印链表" << "\n";
+	while (p->next != NULL)
+	{
+		std::cout << p->data << " ";
+		p = p->next;
+	}
+	std::cout << p->data << "\n";
+	std::cout << "逆序打印双链表" << "\n";
+	while (p->prior != NULL)
+	{
+		std::cout << p->data << " ";
+		p = p->prior;
+	}
+	std::cout << p->data << "\n";
+}
+
+// https://blog.csdn.net/cfan0801/article/details/7350541?utm_source=blogxgwz0
+
 // 双链表的插入操作
+bool test11_ADTOfLinearList::insertDNode(DLinkList L, int i, int x)
+{
+	DNode* p, * s = NULL;
+	s->data = x;
+	// 判断插入位置合法
+	if (i < 1)
+	{
+		return false;
+	}
+	// p指向插入位置i-1
+
+	// 
+}
 
 // 双链表的删除操作
+
+// 按值查找/按位查找等同于单链表
 
 
 // 循环链单链表
