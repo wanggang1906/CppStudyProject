@@ -24,8 +24,7 @@ class test12_ADTOfStack
 	// 共享栈 - 共享栈的数组
 	typedef struct ShareStack {
 		ElemType data[10];
-		int top0; // 0号栈的栈顶指针 - 初值为数组头
-		int top1; // 1号栈的栈顶指针 - 初值为数组尾
+		int top[2]; // top[0] - 0号栈的栈顶指针 - 初值为数组头  // top[1] - 1号栈的栈顶指针 - 初值为数组尾
 	};
 
 	// 链栈
@@ -40,14 +39,29 @@ class test12_ADTOfStack
 public:
 	void classMain();
 
-	// 基本操作
+	// 顺序基本操作
 	void initStack(SqStack& S);
 	bool isStackEmpty(SqStack S);
 	bool pushStack(SqStack& S, ElemType x);
 	bool popStack(SqStack& S, ElemType& x);
 	bool getTopElem(SqStack S, ElemType& x);
+	void printStackElem(SqStack s);
+
+	// 共享栈
+	void initShareStack(ShareStack& s);
+	bool pushShareStack(ShareStack& s, int num, int x);
+	bool popShareStack(ShareStack& s, int num, int& x);
+	ElemType getTopElemOfShareStack(ShareStack s, int num, int& x);
 
 
+
+	// 链栈
+	void createLinkStackOfHead();
+
+	void initLinkStack(LinkStackNode*& s);
+	bool isLinkStackEmpty(LinkStackNode* s);
+	bool pushLinkStack(LinkStackNode* s, ElemType x);
+	bool getElemOfLinkStack(LinkStackNode* s, ElemType& x);
 
 
 
