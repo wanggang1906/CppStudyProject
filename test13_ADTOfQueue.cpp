@@ -10,6 +10,22 @@
 void test13_ADTOfQueue::classMain()
 {
 	std::cout << "test13_ADTOfQueue" << "\n";
+
+	// 循环队列
+	SqQueue newCycleQueue;
+	this->initCycleQueue(newCycleQueue);
+	this->isEmptyOfCycleQueue(newCycleQueue);
+	this->enterElemOfCycleQueue(newCycleQueue, 2);
+	this->enterElemOfCycleQueue(newCycleQueue, 5);
+	this->enterElemOfCycleQueue(newCycleQueue, 3);
+	this->isEmptyOfCycleQueue(newCycleQueue);
+	this->printElementOfCycleQueue(newCycleQueue);
+	int x;
+	this->deleteElemOfCycleQueue(newCycleQueue, x);
+	std::cout << "出队的元素为：" << x << "\n";
+	this->printElementOfCycleQueue(newCycleQueue);
+
+
 }
 
 
@@ -54,17 +70,31 @@ bool test13_ADTOfQueue::enterElemOfCycleQueue(SqQueue& q, ElemType x)
 	return true;
 }
 
-// 元素出队
+// 元素出队 - 循环队列元素出队，
 bool test13_ADTOfQueue::deleteElemOfCycleQueue(SqQueue& q, ElemType& x)
 {
-	if (q.rear == q.front)
+	if (q.rear == q.front) // 判队空
 		return false;
 	x = q.data[q.front];
-	q.front = (q.front + 1) % 10;
+	q.front = (q.front + 1) % 10; // 
 	return true;
 }
 
-// 取对头元素
+// 打印队内元素 - 复制一份，逐个出队
+void test13_ADTOfQueue::printElementOfCycleQueue(SqQueue& q)
+{
+	SqQueue temp;
+	temp = q;
+	//if ((temp.rear + 1) % 10 != temp.front)
+	while (temp.rear != temp.front)
+	{
+		std::cout << temp.data[temp.front] << " ";
+		temp.front = (temp.front + 1) % 10; // 循环队列尾指针前移
+	}
+	std::cout << "队列打印结束" << "\n";
+}
+
+// 取队头元素
 
 
 // 链式队列

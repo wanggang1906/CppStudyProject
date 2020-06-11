@@ -30,6 +30,7 @@ public:
 	bool isEmptyOfCycleQueue(SqQueue q);
 	bool enterElemOfCycleQueue(SqQueue& q, ElemType x);
 	bool deleteElemOfCycleQueue(SqQueue& q, ElemType& x);
+	void printElementOfCycleQueue(SqQueue& q);
 
 	// 链队
 	void initLinkQueue(LinkQueue& q);
