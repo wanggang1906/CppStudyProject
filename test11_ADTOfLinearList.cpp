@@ -30,7 +30,7 @@ void test11_ADTOfLinearList::classMain()
 	std::cout << "test11_ADTOfLinearList" << "\n";
 	// 顺序表
 	//SqList sequenceList;
-	//sequenceList = this->creatSequenceList();
+	//sequenceList = this->createSequenceList();
 	//this->printSequenceList(sequenceList);
 	//this->insertOfSequenceList(sequenceList, 3, 9);
 	//this->printSequenceList(sequenceList);
@@ -41,7 +41,7 @@ void test11_ADTOfLinearList::classMain()
 
 	// 单链表
 	LinkList linkList, lList;
-	lList = this->creatListOfHead(linkList);
+	lList = this->createListOfHead(linkList);
 	this->printList(lList);
 
 
@@ -52,7 +52,7 @@ void test11_ADTOfLinearList::classMain()
 
 // 顺序表的基本操作
 // 建立顺序表 - 先初始化length=0，再赋值data[]
-test11_ADTOfLinearList::SqList test11_ADTOfLinearList::creatSequenceList()
+test11_ADTOfLinearList::SqList test11_ADTOfLinearList::createSequenceList()
 {
 	int sequenceListLength = 5;
 	SqList L;
@@ -142,7 +142,7 @@ void test11_ADTOfLinearList::printSequenceList(SqList& L)
 // 单链表的基本操作
 
 // 头插法建立单链表 - 从表尾到表头逆向建立单链表L，每次均在头节点之后插入元素
-test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfHead(LinkList& L)
+test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::createListOfHead(LinkList& L)
 {
 	LNode* s;
 	int x;
@@ -187,7 +187,7 @@ void test11_ADTOfLinearList::printList(LinkList& L)
 }
 
 // 尾插法建立单链表
-test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::creatListOfFinal(LinkList& L)
+test11_ADTOfLinearList::LinkList test11_ADTOfLinearList::createListOfFinal(LinkList& L)
 {
 	int x;
 	L = (LinkList)malloc(sizeof(LNode));
@@ -327,7 +327,7 @@ int test11_ADTOfLinearList::getListLength(LinkList L)
 // 双链表
 
 // 创建双链表
-test11_ADTOfLinearList::DNode* test11_ADTOfLinearList::creatDNodeList()
+test11_ADTOfLinearList::DNode* test11_ADTOfLinearList::createDNodeList()
 {
 	DNode* head, * p, * s;
 	int x, cycle = 1;
@@ -392,17 +392,34 @@ bool test11_ADTOfLinearList::insertDNode(DLinkList L, int i, int x)
 	// 
 }
 
-// 双链表的删除操作
+// 双链表的删除操作 - 删除i位序的元素x
+bool test11_ADTOfLinearList::deleteDNode(DLinkList L, int i, int x)
+{
+	return true;
+}
 
 // 按值查找/按位查找等同于单链表
 
 
 // 循环链单链表
+// 建立循环单链表
+bool test11_ADTOfLinearList::createSingleCycleList()
+{
+	return true;
+}
 
 // 循环双链表
+bool test11_ADTOfLinearList::createDoubleCycleList()
+{
+	return true;
+}
 
-// 静态链表
-
+// 静态链表 - 借助数组描述线性表的链式存储结构，指针域为相对地址(数组下标，又叫游标)，和顺序表相似，要预先分配连续的空间
+// 创建静态链表
+bool test11_ADTOfLinearList::createStaticList()
+{
+	return true;
+}
 
 
 
@@ -420,7 +437,7 @@ void test11_ADTOfLinearList::intiSqList(SqList*& L)
 
 
 //【2】整体建立顺序表
-void test11_ADTOfLinearList::creatSqList(SqList*& L, ElemType a[], int n)
+void test11_ADTOfLinearList::createSqList(SqList*& L, ElemType a[], int n)
 {
 	printf("【2】建立顺序表线性表的 方法进来了！\n");
 	L = (SqList*)malloc(sizeof(SqList));//为线性表分配空间

@@ -34,21 +34,26 @@ class test11_ADTOfLinearList
 	}DNode, * DLinkList;
 
 
+	// 静态链表节点
+	typedef struct StaticLinkList {
+		ElemType data;
+		int next; // 下一个元素的数组下标
+	};
 
 
 
 public:
 
-	SqList creatSequenceList();
+	SqList createSequenceList();
 	bool insertOfSequenceList(SqList& L, int i, ElemType e);
 	bool deleteOfSequenceList(SqList& L, int i, ElemType& e);
 	int findElem(SqList L, ElemType e);
 	void printSequenceList(SqList& L);
 
 
-	LinkList creatListOfHead(LinkList& L);
+	LinkList createListOfHead(LinkList& L);
 	void printList(LinkList& L);
-	LinkList creatListOfFinal(LinkList& L);
+	LinkList createListOfFinal(LinkList& L);
 	LNode* getElemByNum(LinkList L, int i);
 	LNode* findElemByValue(LinkList L, ElemType e);
 	bool insertNode(LinkList L, int i, int x);
@@ -57,15 +62,22 @@ public:
 	int getListLength(LinkList L);
 
 	// 双链表
-	DNode* creatDNodeList();
+	DNode* createDNodeList();
 	void printDNode(DNode* L);
 	bool insertDNode(DLinkList L, int i, int x);
+	bool deleteDNode(DLinkList L, int i, int x);
+
+	// 单循环
+	bool createSingleCycleList();
+	bool createDoubleCycleList();
 
 
+	// 静态链表
+	bool createStaticList();
 
 	void classMain();
 	void intiSqList(SqList*& L);
-	void creatSqList(SqList*& L, ElemType a[], int n);
+	void createSqList(SqList*& L, ElemType a[], int n);
 	bool listIsEmpty(SqList* L);
 	bool listInsert(SqList* L, int i, ElemType e);
 	int getSqListLength(SqList* L);
