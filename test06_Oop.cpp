@@ -27,6 +27,10 @@ public:
 	std::string name;
 	float age;
 	int a;
+	int perFar;
+	typedef struct perF {
+		int f;
+	};
 
 	void saidWord()
 	{
@@ -51,6 +55,8 @@ public:
 	void saidSelfName()
 	{
 		std::cout << "我是：" << perAParticularAttribute;
+		perFar = 10;
+		perF f = { 1 };
 	}
 
 };

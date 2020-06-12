@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 
-// 引入栈
-#include"test12_ADTOfStack.h"
 
 // 树 - 二叉树，森林及其使用
 // 
@@ -14,8 +12,11 @@ void test14_ADTOfTree::classMain()
 	std::cout << "test14_ADTOfTree" << "\n";
 	// 顺序存储
 	BinaryTreeArray newBiTreeArray;
-	this->createBinaryTreeByArray(newBiTreeArray);
+	//this->createBinaryTreeByArray(newBiTreeArray);
+
+
 }
+
 
 
 // 二叉树
@@ -62,11 +63,51 @@ void test14_ADTOfTree::createBinaryTreeByArray(BinaryTreeArray& t)
 
 
 // *链式存储*
+// 创建链式存储的二叉树 - 
+void test14_ADTOfTree::createLinkBinaryTree(BiTree& t) // 要改变指针，所以要吧指针传进来，相当于指针的指针
+{
+	int TREE_LENGTH = 100; // 整个树的最大节点数
+	int l_ch;
+	int r_ch;
+	int root; // 定义三个指针，左/右/根节点
+	BinaryTreeNode rootNode = { 1 };
+	BinaryTreeNode lchNode = { 1 };
+	BinaryTreeNode rchNode = { 1 };
+	for (int i = 0; i < TREE_LENGTH; i++)
+	{
+		if (rootNode.data != NULL)
+		{
+			std::cout << "输入根节点" << "\n";
+			std::cin >> rootNode.data;
+			rootNode.lchild = &lchNode;
+		}
+		else if (lchNode.data != NULL)
+		{
+			std::cout << "左孩子" << "\n";
+			std::cin >> lchNode.data;
+			lchNode.lchild = &rootNode;
+		}
+		else if (rchNode.data != NULL)
+		{
+			std::cout << "右" << "\n";
+			std::cin >> rchNode.data;
+			rchNode.rchild = &rootNode;
+		}
+
+	}
+	std::cout << "输入左孩子" << "\n";
+	std::cin >> l_ch;
+}
+
 // 二叉树遍历 - 递归/非递归
 // 访问根节点 - 只打印树的根节点
 void test14_ADTOfTree::printTreeRootElem(BiTree t)
 {
-
+	if (t->data != NULL)
+	{
+		std::cout << t->data << " ";
+	}
+	std::cout << "此树无根节点，为空树" << "\n";
 }
 
 // 先序遍历 - 递归法
@@ -98,9 +139,23 @@ void test14_ADTOfTree::midOrderOfLinkBiTree2(BiTree t)
 {
 	// 初始化一个栈
 	test12_ADTOfStack* test12 = new test12_ADTOfStack();
-	//SqStack newStack;
-	//test12->initStack(newStack);
-	BiTree p = t;
+	SqStack newStack;
+	test12->initStack(newStack);
+	BiTree p = t; // p是遍历指针
+	while (p || !test12->isStackEmpty(newStack)) // 栈不空或p不空时循环
+	{
+		if (p) // 根指针进栈，遍历左子树
+		{
+			test12->pushStack(newStack, p->data); // 每遇到非空二叉树先向左走
+			p = p->lchild;
+		}
+		else
+		{
+			test12->popStack(newStack, p->data); // 退栈
+			this->printTreeRootElem(p); // 访问根节点
+			p = p->rchild; // 再向右子树走
+		}
+	}
 }
 
 // 后序遍历
@@ -163,7 +218,7 @@ void test14_ADTOfTree::initUFSet(int s[])
 // find操作
 int test14_ADTOfTree::findOfUFSet(int s[], int x)
 {
-
+	return 0;
 }
 
 

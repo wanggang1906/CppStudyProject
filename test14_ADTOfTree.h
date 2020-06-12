@@ -1,7 +1,8 @@
 ﻿#pragma once
+#include"test12_ADTOfStack.h"
 
 // test14公有继承test12
-class test14_ADTOfTree
+class test14_ADTOfTree :test12_ADTOfStack
 {
 	typedef int ElemType;
 	// 二叉树的存储
@@ -9,15 +10,15 @@ class test14_ADTOfTree
 	// 顺序存储 - 用数组存
 	typedef int BinaryTreeArray[100];
 
-	typedef struct SqStack {
-		ElemType data[10];
-		int top; // 栈顶指针
-	};
+	//typedef struct SqStack {
+	//	ElemType data[10];
+	//	int top; // 栈顶指针
+	//};
 	// 链栈
-	typedef struct LinkStackNode {
-		ElemType data;
-		struct LinkStackNode* next; // 指针域
-	} *LiStack;
+	//typedef struct LinkStackNode {
+	//	ElemType data;
+	//	struct LinkStackNode* next; // 指针域
+	//} *LiStack;
 
 	// 链式存储
 	typedef struct BinaryTreeNode {
@@ -58,6 +59,8 @@ class test14_ADTOfTree
 	int UnionFindSets[100]; // 集合元素数组(双亲指针数组)
 	// :public test12_ADTOfStack
 
+
+
 public:
 	//test12_ADTOfStack::test12_ADTOfStack();
 
@@ -67,6 +70,7 @@ public:
 	void createBinaryTreeByArray(BinaryTreeArray& t);
 
 	// 链式
+	void createLinkBinaryTree(BiTree& t);
 	void printTreeRootElem(BiTree t);
 	void preferenceOrderOfLinkBiTree(BiTree t);
 	void preferenceOrderOfLinkBiTree2(BiTree t);

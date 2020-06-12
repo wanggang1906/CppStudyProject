@@ -1,6 +1,7 @@
 ﻿#pragma once
 class test12_ADTOfStack
 {
+public:
 	// C++成员访问限定符
 	// class中如果对成员变量和成员函数不指定访问权限限定符，默认为private
 	// 而struct则默认为public。
