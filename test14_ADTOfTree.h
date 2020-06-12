@@ -1,9 +1,23 @@
 ﻿#pragma once
+
+// test14公有继承test12
 class test14_ADTOfTree
 {
 	typedef int ElemType;
+	// 二叉树的存储
 
-	// 顺序存储
+	// 顺序存储 - 用数组存
+	typedef int BinaryTreeArray[100];
+
+	typedef struct SqStack {
+		ElemType data[10];
+		int top; // 栈顶指针
+	};
+	// 链栈
+	typedef struct LinkStackNode {
+		ElemType data;
+		struct LinkStackNode* next; // 指针域
+	} *LiStack;
 
 	// 链式存储
 	typedef struct BinaryTreeNode {
@@ -12,16 +26,61 @@ class test14_ADTOfTree
 	}BiTNode, * BiTree;
 
 
-	// 树的存储
-	// 双亲表示法
+	// 线索二叉树
+	typedef struct ThreadBinaryTree {
+		ElemType data;
+		struct ThreadBinaryTree* lchild, * rchild;
+		int ltag, rtag;
+	} ThreadNode, * ThreadTree;
 
+	// **树的存储**
+	// 双亲表示法
+	typedef struct PTNode {
+		ElemType data;
+		int parent; // 双亲位置域
+	}PTNode;
+
+	typedef struct PTree {
+		PTNode nodes[100];
+		int n; // 节点数
+	};
 	// 孩子表示法
 
 	// 孩子兄弟表示法
+	typedef struct CSNode {
+		ElemType data;
+		struct CSNode* firstChild, * nextRightBrother; // 第一个孩子/右兄弟指针
+	} CSNode, * CSTree;
 
 
-
+	// 并查集
+	// int UFSets[100];
+	int UnionFindSets[100]; // 集合元素数组(双亲指针数组)
+	// :public test12_ADTOfStack
 
 public:
+	//test12_ADTOfStack::test12_ADTOfStack();
+
 	void classMain();
+
+	// 顺序
+	void createBinaryTreeByArray(BinaryTreeArray& t);
+
+	// 链式
+	void printTreeRootElem(BiTree t);
+	void preferenceOrderOfLinkBiTree(BiTree t);
+	void preferenceOrderOfLinkBiTree2(BiTree t);
+	void midOrderOfLinkBiTree(BiTree t);
+	void midOrderOfLinkBiTree2(BiTree t);
+	void finallyOrderOfLinkBiTree(BiTree t);
+	void finallyOrderOfLinkBiTree2(BiTree t);
+	void layerOrderOfLinkBiTree(BiTree t);
+	void createThreadBinaryTree();
+	void binaryTree2ThreadBinaryTree(ThreadTree& p, ThreadTree& pre);
+	void createMidThreadBinaryTree(ThreadTree t);
+
+	// 并查集
+	void initUFSet(int s[]);
+	int findOfUFSet(int s[], int x);
+	void unionOfUFSet(int s[], int root1, int root2);
 };
