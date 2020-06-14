@@ -16,6 +16,8 @@ void test14_ADTOfTree::classMain()
 
 	BiTree newTree;
 	this->createLinkBinaryTree(newTree);
+	this->preferenceOrderOfLinkBiTree(newTree);
+
 }
 
 
@@ -64,56 +66,29 @@ void test14_ADTOfTree::createBinaryTreeByArray(BinaryTreeArray& t)
 
 
 // *链式存储*
-// 创建链式存储的二叉树 - 递归法
+// 创建链式存储的二叉树 - 递归法，先序遍历法
 // 先判断输入不为99，否则表示创建结束
-// 创建一个新节点，数据域为输入值
+// 创建一个新节点，数据域为输入值，为-1则表示次节点无数据
 // 对左孩子指针域调用create函数
 // 对右孩子指针域调用create函数
 void test14_ADTOfTree::createLinkBinaryTree(BiTree& t) // 要改变指针，所以要吧指针传进来，相当于指针的指针
 {
-	//int TREE_LENGTH = 100; // 整个树的最大节点数
-	//int l_ch;
-	//int r_ch;
-	//int root; // 定义三个指针，左/右/根节点
-	//BinaryTreeNode rootNode = { 1 };
-	//BinaryTreeNode lchNode = { 1 };
-	//BinaryTreeNode rchNode = { 1 };
-	//for (int i = 0; i < TREE_LENGTH; i++)
-	//{
-	//	if (rootNode.data != NULL)
-	//	{
-	//		std::cout << "输入根节点" << "\n";
-	//		std::cin >> rootNode.data;
-	//		rootNode.lchild = &lchNode;
-	//	}
-	//	else if (lchNode.data != NULL)
-	//	{
-	//		std::cout << "左孩子" << "\n";
-	//		std::cin >> lchNode.data;
-	//		lchNode.lchild = &rootNode;
-	//	}
-	//	else if (rchNode.data != NULL)
-	//	{
-	//		std::cout << "右" << "\n";
-	//		std::cin >> rchNode.data;
-	//		rchNode.rchild = &rootNode;
-	//	}
-
-	//}
 	int ch;
-	std::cout << "输入孩子" << "\n";
+	std::cout << "输入节点值( != -1 )" << "\n";
 	std::cin >> ch;
-	// 输入-1表示此节点无值
-	if (ch == -1)
-		t = NULL;
-	else
+	if (ch != 99)
 	{
-		t = new BinaryTreeNode;
-		t->data = ch;
-		createLinkBinaryTree(t->lchild);//cout<<"输入"<<ch<<"的左孩子：" ;
-		createLinkBinaryTree(t->rchild);//cout<<"输入"<<ch<<"的右孩子：" ;
+		// 输入-1表示此节点无值
+		if (ch == -1)
+			t = NULL;
+		else
+		{
+			t = new BinaryTreeNode; // 开堆区空间，等同malloc()
+			t->data = ch;
+			createLinkBinaryTree(t->lchild);//cout<<"输入"<<ch<<"的左孩子：" ;
+			createLinkBinaryTree(t->rchild);//cout<<"输入"<<ch<<"的右孩子：" ;
+		}
 	}
-
 }
 
 // 二叉树遍历 - 递归/非递归
@@ -124,7 +99,8 @@ void test14_ADTOfTree::printTreeRootElem(BiTree t)
 	{
 		std::cout << t->data << " ";
 	}
-	std::cout << "此树无根节点，为空树" << "\n";
+	else
+		std::cout << "此树无根节点，为空树" << "\n";
 }
 
 // 先序遍历 - 递归法
