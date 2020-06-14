@@ -5,6 +5,17 @@ class test15_ADTOfGraph
 	typedef char VertexType; // 顶点的数据类型
 	typedef int EdgeType; // 带权图中边上权值的数据类型
 
+#define E 4 // 图的边数
+#define N 4 // 图的顶点数
+	typedef char vexType; // 顶点的数据类型
+	typedef float adjType; // 边的权值数据类型
+
+	// 普通无向图
+	typedef struct Graph {
+		vexType vdxs[N]; // 顶点信息
+		adjType adjs[N][N]; // 邻接矩阵
+	};
+
 	// 邻接矩阵法
 	typedef struct MGraph {
 		VertexType Vex[MaxVertexNum]; // 顶点表
@@ -63,6 +74,11 @@ class test15_ADTOfGraph
 
 public:
 	void classMain();
+
+	// 普通无向图
+	void initOrdinaryGraph(Graph* g);
+	void visitOrdinaryGraph(Graph* g);
+	bool addNodeOfOrdinaryGraph();
 
 	// 邻接矩阵法
 

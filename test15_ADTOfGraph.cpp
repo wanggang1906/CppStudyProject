@@ -13,6 +13,11 @@
 void test15_ADTOfGraph::classMain()
 {
 	std::cout << "test15_ADTOfGraph" << "\n";
+
+	// 普通无向图
+	Graph* g = new Graph;
+	this->initOrdinaryGraph(g);
+	this->visitOrdinaryGraph(g);
 }
 
 
@@ -23,6 +28,68 @@ void test15_ADTOfGraph::classMain()
 
 
 // **图的基本操作**
+// 普通的无向图
+void test15_ADTOfGraph::initOrdinaryGraph(Graph* g)
+{
+	// 初始化无向图g
+	char tempChar;
+	for (int i = 0; i < N; ++i)
+	{
+		std::cout << "输入一个顶点：" << "\n";
+		std::cin >> tempChar;
+		g->vdxs[i] = tempChar;
+	}
+	// 初始化邻接矩阵
+	for (int i = 0; i < N; ++i)
+	{
+		for (int j = 0; i < N; ++i)
+		{
+			g->adjs[i][j] = 0;
+		}
+	}
+	// 写入邻接矩阵
+	int vex1, vex2;
+	float w; // 权值
+	for (int k = 0; k < E; ++k)
+	{
+		std::cout << "输入每个顶点序号(从0开始)和权值：如1，2，5;表示第二和第三个顶点之间的是否相连以及权值" << "\n";
+		scanf_s("%d%d%f", &vex1, &vex2, &w);
+		g->adjs[vex1][vex2] = w;
+		g->adjs[vex2][vex1] = w;
+		// 若建立有向图，则将最后一个赋值语句去掉，可以将w的值设为1，变为无向图
+	}
+}
+
+// 普通无向图的访问
+void test15_ADTOfGraph::visitOrdinaryGraph(Graph* g)
+{
+	int visit[N]; // 辅助数组，标记点是否已经被访问
+	std::cout << "图g的顶点为：" << "\n";
+	for (int i = 0; i < N; ++i)
+	{
+		std::cout << g->vdxs[i] << " ";
+	}
+	//delete g; // 释放内存
+	std::cout << "图打印完毕" << "\n";
+}
+
+// 参考
+// https://blog.csdn.net/misayaaaaa/article/details/72528686
+
+// 向图中加入节点
+bool test15_ADTOfGraph::addNodeOfOrdinaryGraph()
+{
+	return true;
+}
+
+// 重置所有顶点为未访问
+
+
+
+// 参考
+// https://blog.csdn.net/shangguanyunlan/article/details/52900579
+
+
 // 判断图G是否存在边<x,y>
 
 // 列出图g中与节点x邻接的边
