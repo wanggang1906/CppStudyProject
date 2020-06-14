@@ -5,7 +5,7 @@ public:
 	// C++成员访问限定符
 	// class中如果对成员变量和成员函数不指定访问权限限定符，默认为private
 	// 而struct则默认为public。
-#define MSize 10;
+#define MSize 10 // 宏定义不是一条语句，后无分号
 	//int MaxSize = 10;
 	// 参考
 	// https://blog.csdn.net/lizhengze1117/article/details/98746628
@@ -18,13 +18,13 @@ public:
 	typedef int ElemType;
 	// 顺序栈
 	typedef struct SqStack {
-		ElemType data[10];
+		ElemType data[MSize];
 		int top; // 栈顶指针
 	};
 
 	// 共享栈 - 共享栈的数组
 	typedef struct ShareStack {
-		ElemType data[10];
+		ElemType data[MSize];
 		int top[2]; // top[0] - 0号栈的栈顶指针 - 初值为数组头  // top[1] - 1号栈的栈顶指针 - 初值为数组尾
 	};
 
