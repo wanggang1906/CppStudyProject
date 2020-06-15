@@ -18,8 +18,8 @@ class test15_ADTOfGraph
 
 	// 邻接矩阵法
 	typedef struct MGraph {
-		VertexType Vex[MaxVertexNum]; // 顶点表
-		EdgeType Edge[MaxVertexNum][MaxVertexNum]; // 邻接矩阵，边表
+		VertexType Vex[MaxVertexNum]; // 顶点表，存顶点信息，简单应用中可以省略
+		EdgeType Edge[MaxVertexNum][MaxVertexNum]; // 邻接矩阵，边表，若仅表示对应边是否存在，则可用0/1枚举类型
 		int vexNum, arcNum; // 图的当前顶点数和弧数
 	};
 
@@ -47,7 +47,7 @@ class test15_ADTOfGraph
 	}CrossArcNode;
 	typedef struct VerNode { // 顶点表节点
 		VertexType data; // 顶点信息
-		CrossArcNode* firestIn, * firestOut; // 指向第一条入弧和出弧
+		CrossArcNode* firestIn, * firestOut; // 指向第一条入弧和出弧(以该顶点为尾的弧)
 	}VerNode;
 	typedef struct GLGraph { // GLGraph是以十字邻接存储的图类型
 		VerNode xList[MaxVertexNum]; // 邻接表
@@ -81,6 +81,16 @@ public:
 	bool addNodeOfOrdinaryGraph();
 
 	// 邻接矩阵法
+
+
+	// 图的遍历
+	void BFSTraverseOfGraph();
+	void DFSTraverseOfGraph();
+	void BFSMinDistance();
+
+	// 图的搜索
+	bool BFSSearchOfGraph();
+	bool DFSSearchOfGraph();
 
 
 };
