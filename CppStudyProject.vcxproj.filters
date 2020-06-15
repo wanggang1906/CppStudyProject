@@ -66,6 +66,21 @@
     <ClCompile Include="test06_2_Oop.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test21_StlConOfVector.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test22_StlConOfDeque.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test23_StlConOfList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test24_StlConOfSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test25_StlConOfMap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h">
@@ -111,6 +126,21 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="test20_StlAbstract.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test21_StlConOfVector.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test22_StlConOfDeque.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test23_StlConOfList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test24_StlConOfSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test25_StlConOfMap.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

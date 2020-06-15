@@ -155,6 +155,11 @@
     <ClCompile Include="test16_AlgOfSearch.cpp" />
     <ClCompile Include="test17_AlgOfSort.cpp" />
     <ClCompile Include="test20_StlAbstract.cpp" />
+    <ClCompile Include="test21_StlConOfVector.cpp" />
+    <ClCompile Include="test22_StlConOfDeque.cpp" />
+    <ClCompile Include="test23_StlConOfList.cpp" />
+    <ClCompile Include="test24_StlConOfSet.cpp" />
+    <ClCompile Include="test25_StlConOfMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -172,6 +177,11 @@
     <ClInclude Include="test16_AlgOfSearch.h" />
     <ClInclude Include="test17_AlgOfSort.h" />
     <ClInclude Include="test20_StlAbstract.h" />
+    <ClInclude Include="test21_StlConOfVector.h" />
+    <ClInclude Include="test22_StlConOfDeque.h" />
+    <ClInclude Include="test23_StlConOfList.h" />
+    <ClInclude Include="test24_StlConOfSet.h" />
+    <ClInclude Include="test25_StlConOfMap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
