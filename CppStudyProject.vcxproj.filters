@@ -81,6 +81,12 @@
     <ClCompile Include="test25_StlConOfMap.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test26_StlAlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test27_StlString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h">
@@ -141,6 +147,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="test25_StlConOfMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test27_StlString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test26_StlAlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

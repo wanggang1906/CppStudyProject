@@ -159,7 +159,9 @@
     <ClCompile Include="test22_StlConOfDeque.cpp" />
     <ClCompile Include="test23_StlConOfList.cpp" />
     <ClCompile Include="test24_StlConOfSet.cpp" />
+    <ClCompile Include="test26_StlAlg.cpp" />
     <ClCompile Include="test25_StlConOfMap.cpp" />
+    <ClCompile Include="test27_StlString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -181,7 +183,9 @@
     <ClInclude Include="test22_StlConOfDeque.h" />
     <ClInclude Include="test23_StlConOfList.h" />
     <ClInclude Include="test24_StlConOfSet.h" />
+    <ClInclude Include="test26_StlAlg.h" />
     <ClInclude Include="test25_StlConOfMap.h" />
+    <ClInclude Include="test27_StlString.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

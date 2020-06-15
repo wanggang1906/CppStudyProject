@@ -1,5 +1,5 @@
 ﻿#pragma once
-class test21_StlConOfVector
+class test27_StlString
 {
 public:
 	void classMain();
