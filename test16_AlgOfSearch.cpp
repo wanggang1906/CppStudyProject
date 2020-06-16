@@ -14,9 +14,23 @@
 //		B+树
 // 散列结构
 //		Hash散列
+//			散列函数
+//				直接定址法 - 线性函数
+//				除留余数法 - p不大于，接近总长m，则H(key) = key % p
+//				数字分析法 - 
+//				平方取中法
+//				折叠法
+//			解决冲突的方法
+//				开放定址法 - 可存放新表项的空闲地址，即向它的同义词表现开放，又向它的非同义词表项开发
+//					线性探测法 - 查看下一个空闲单元
+//					平方探测法 - 下一位序平方空闲单元
+//					再散列法 - 双散列法，两个散列函数
+//					伪随机序列法 - di=伪随机序列
+//				拉链法 - 所有同义词存储在一个线性表中，使用于经常要进行插入，删除的操作
 // 查找的效率指标
 //		平均查找长度
-// 字符串模式匹配
+// 字符串模式匹配 - 求第一个字符串(模式串)在第二个字符串(主串)中的位置
+//		
 // 查找算法的应用
 //
 
@@ -24,6 +38,13 @@
 void test16_AlgOfSearch::classMain()
 {
 	std::cout << "test16_AlgOfSearch" << "\n";
+
+	// KMP
+	std::string themeStr = "abcefabcdef";
+	std::string patternStr = "abcd";
+	int result = this->KMPIndexOfStr(themeStr, patternStr);
+	std::cout << "模式串的位置为：" << result << "\n";
+
 }
 
 
@@ -76,16 +97,53 @@ int test16_AlgOfSearch::blockSearch(SeqList l, ElemType key)
 
 
 // 字符串模式匹配
-// 普通模式匹配算法
-int test16_AlgOfSearch::indexOfStr()
+// 普通简单的模式匹配算法 - 返回模式串在主串中的位置
+// s - 主串，t - 模式串
+int test16_AlgOfSearch::indexOfStr(std::string s, std::string t)
 {
-	return 0;
+	int i = 1, j = 1;
+	while (i <= s[0] && j <= t[0])
+	{
+		if (s[i] == t[j])
+		{
+			++i;
+			++j;
+		}
+		else
+		{
+			i = i - j + 2;
+			j = 1;
+		}
+	}
+	if (j > t[0])
+		return i - t[0];
+	else
+		return 0;
 }
 
 // 改进模式匹配算法 - KMP
-int test16_AlgOfSearch::KMPIndexOfStr()
+int test16_AlgOfSearch::KMPIndexOfStr(std::string t, std::string p)
 {
-	return 0;
+	int i = 0, j = 0;
+	int* next = this->getNextOfKMP2(t);
+	while (i < (int)t.length() && j < (int)p.length())
+	{
+		if (j == -1 || t[i] == p[j])
+		{
+			i++;
+			j++;
+		}
+		else
+		{
+			j = next[j];
+		}
+
+	}
+	if (j == (int)p.length())
+	{
+		return i - j;
+	}
+	return -1;
 }
 
 // KMP算法的next函数
@@ -107,4 +165,27 @@ void test16_AlgOfSearch::getNextOfKMP(char t[], int next[])
 			j = next[j];
 		}
 	}
+}
+
+// kmp的next函数
+// 在主串中找next位置
+int* test16_AlgOfSearch::getNextOfKMP2(std::string p)
+{
+	int* next = new int[p.length()];
+	next[0] = -1;
+	int j = 0, k = -1;
+	while (j < (int)p.length() - 1)
+	{
+		if (k == -1 || p[j] == p[k])
+		{
+			j++;
+			k++;
+			next[j] = k;
+		}
+		else
+		{
+			k = next[k];
+		}
+	}
+	return next;
 }

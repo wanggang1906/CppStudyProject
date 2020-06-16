@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿#include <string>
+
+#pragma once
 class test16_AlgOfSearch
 {
 	typedef int ElemType;
@@ -23,7 +25,8 @@ public:
 	int binarySearch(SeqList l, ElemType key);
 	int blockSearch(SeqList l, ElemType key);
 
-	int indexOfStr();
-	int KMPIndexOfStr();
+	int indexOfStr(std::string s, std::string t);
+	int KMPIndexOfStr(std::string t, std::string p);
 	void getNextOfKMP(char t[], int next[]);
+	int* getNextOfKMP2(std::string p);
 };
