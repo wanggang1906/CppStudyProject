@@ -33,7 +33,17 @@
 #include "test15_ADTOfGraph.h"
 #include "test16_AlgOfSearch.h"
 #include "test17_AlgOfSort.h"
+
 #include "test20_StlAbstract.h"
+#include"test21_StlConOfVector.h"
+#include"test22_StlConOfDeque.h"
+#include"test23_StlConOfList.h"
+#include"test24_StlConOfSet.h"
+#include"test25_StlConOfMap.h"
+#include"test26_StlAlg.h"
+#include"test27_StlString.h"
+
+#include"test30_OpenCv.h"
 
 
 
@@ -101,6 +111,17 @@ int main() // 函数头
 	test16_AlgOfSearch te16me;
 	test17_AlgOfSort te17me;
 
+	test20_StlAbstract te20me;
+	test21_StlConOfVector te21me;
+	test22_StlConOfDeque te22me;
+	test23_StlConOfList te23me;
+	test24_StlConOfSet te24me;
+	test25_StlConOfMap te25me;
+	test26_StlAlg te26me;
+	test27_StlString te27me;
+
+	test30_OpenCv te30me;
+
 
 
 
@@ -155,6 +176,39 @@ int main() // 函数头
 		case 17:
 			te17me.classMain();
 			break;
+
+
+		case 20:
+			te20me.classMain();
+			break;
+		case 21:
+			te21me.classMain();
+			break;
+		case 22:
+			te22me.classMain();
+			break;
+		case 23:
+			te23me.classMain();
+			break;
+		case 24:
+			te24me.classMain();
+			break;
+		case 25:
+			te25me.classMain();
+			break;
+		case 26:
+			te26me.classMain();
+			break;
+		case 27:
+			te27me.classMain();
+			break;
+
+
+		case 30:
+			te30me.classMain();
+			break;
+
+
 		default:
 			printf("\n无效的输入!\n");
 		}

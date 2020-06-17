@@ -162,6 +162,7 @@
     <ClCompile Include="test26_StlAlg.cpp" />
     <ClCompile Include="test25_StlConOfMap.cpp" />
     <ClCompile Include="test27_StlString.cpp" />
+    <ClCompile Include="test30_OpenCv.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test02_MinExample.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="test26_StlAlg.h" />
     <ClInclude Include="test25_StlConOfMap.h" />
     <ClInclude Include="test27_StlString.h" />
+    <ClInclude Include="test30_OpenCv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
