@@ -31,6 +31,16 @@
 void test17_AlgOfSort::classMain()
 {
 	std::cout << "test17_AlgOfSort" << "\n";
+
+	ElemType comingSortArray[] = { 1,4,2,6,3,9,0,5,8,2 };
+	int elemNum = 25;
+	this->sirectInsertSort(comingSortArray, elemNum);
+	std::cout << "排序后元素" << "\n";
+	for (int i = 0; i < elemNum; i++)
+	{
+		std::cout << comingSortArray[i].key << " ";
+	}
+
 }
 
 
@@ -150,7 +160,7 @@ int test17_AlgOfSort::quickSortOfPartition(ElemType a[], int low, int high)
 void test17_AlgOfSort::simpleSelectSort(ElemType a[], int n)
 {
 	int i, j, min;
-	for (i = 0; j < n - 1; i++)
+	for (i = 0; i < n - 1; i++)
 	{
 		min = i;
 		for (j = i + 1; j < n; j++)
