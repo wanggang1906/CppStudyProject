@@ -101,6 +101,33 @@ void test30_OpenCv::operationImgOfOpenCV()
 			bgr[2] = 0;
 		}
 
+	// 图像遍历 - 使用指针
+	for (size_t r = 0; r < matUnchanged.rows; r++)//行
+	{
+		//step返回图像一行的字节数
+		unsigned char* pRow = matUnchanged.data + r * matUnchanged.step[0];//计算图像行首指针
+		for (size_t c = 0; c < matUnchanged.cols; c++)//列
+		{
+			pRow[3 * c + 2] = 0;
+		}
+	}
+
+
+	// 图像遍历 - 行首指针存储法
+	//存储图像行首指针
+	std::vector<unsigned char*> rowPtr(matUnchanged.rows);
+	for (size_t r = 0; r < matUnchanged.rows; r++)
+		rowPtr[r] = matUnchanged.data + r * matUnchanged.step[0];
+
+	//遍历图像
+	for (size_t r = 0; r < matUnchanged.rows; r++)//行
+		for (size_t c = 0; c < matUnchanged.cols; c++)//列
+		{
+			rowPtr[r][c * 3 + 2] = 0;
+		}
+
+
+
 	// 参考
 	// https://blog.csdn.net/huqiang_823/article/details/80698670
 
