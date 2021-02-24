@@ -14,7 +14,7 @@ public:
 	void binaryInsertSort(ElemType a[], int n);
 	void shellInsertSort(ElemType a[], int n);
 	void bubbleSort(ElemType a[], int n);
-	void quickSort(ElemType a[], int n);
+	void quickSort(ElemType a[], int low, int high);
 	int quickSortOfPartition(ElemType a[], int low, int high);
 	void simpleSelectSort(ElemType a[], int n);
 	void buildMaxRootHeap(ElemType a[], int len);

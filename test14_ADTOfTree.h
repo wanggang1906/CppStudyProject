@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include"test12_ADTOfStack.h"
+#include <cstddef>
 
 // test14公有继承test12
 class test14_ADTOfTree :test12_ADTOfStack
@@ -20,19 +21,23 @@ class test14_ADTOfTree :test12_ADTOfStack
 	//	struct LinkStackNode* next; // 指针域
 	//} *LiStack;
 
-	// 链式存储
+	// 链式存储 - 二叉链表
 	typedef struct BinaryTreeNode {
 		ElemType data;
 		struct BinaryTreeNode* lchild, * rchild; // 左/右孩子指针
 	}BiTNode, * BiTree;
 
 
-	// 线索二叉树
+	// 线索二叉树结点 - 线索链表
 	typedef struct ThreadBinaryTree {
 		ElemType data;
 		struct ThreadBinaryTree* lchild, * rchild;
-		int ltag, rtag;
+		int ltag, rtag; // 左，右线索标志,0孩子，1线索
 	} ThreadNode, * ThreadTree;
+
+	// 全局变量pre，指向当前访问节点的前驱
+	ThreadNode* pre = NULL;
+
 
 	// **树的存储**
 	// 双亲表示法
@@ -79,8 +84,15 @@ public:
 	void finallyOrderOfLinkBiTree(BiTree t);
 	void finallyOrderOfLinkBiTree2(BiTree t);
 	void layerOrderOfLinkBiTree(BiTree t);
-	void createThreadBinaryTree();
+
+	void binaryTreeInThread(ThreadTree t, ThreadTree& pre);
+	void binaryTreeVisit(ThreadNode* q, ThreadTree& pre);
+	void createMidThreadBinaryTree2(ThreadTree t);
 	void binaryTree2ThreadBinaryTree(ThreadTree& p, ThreadTree& pre);
+
+	// 中序线索化 - 递归法
+	void inThread(ThreadTree& p, ThreadTree& pre);
+
 	void createMidThreadBinaryTree(ThreadTree t);
 
 	// 并查集

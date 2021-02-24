@@ -92,7 +92,7 @@ void test14_ADTOfTree::createLinkBinaryTree(BiTree& t) // 要改变指针，所�
 }
 
 // 二叉树遍历 - 递归/非递归
-// 访问根节点 - 只打印树的根节点
+// 访问根节点 - 只打印树的根节点 == visit
 void test14_ADTOfTree::printTreeRootElem(BiTree t)
 {
 	if (t->data != NULL)
@@ -106,7 +106,7 @@ void test14_ADTOfTree::printTreeRootElem(BiTree t)
 // 先序遍历 - 递归法
 void test14_ADTOfTree::preferenceOrderOfLinkBiTree(BiTree t)
 {
-
+	// 根，左，右
 	if (t != NULL)
 	{
 		this->printTreeRootElem(t);
@@ -118,6 +118,7 @@ void test14_ADTOfTree::preferenceOrderOfLinkBiTree(BiTree t)
 // 中序遍历 - 递归法
 void test14_ADTOfTree::midOrderOfLinkBiTree(BiTree t)
 {
+	// 左根右
 	if (t != NULL)
 	{
 		this->midOrderOfLinkBiTree(t->lchild);
@@ -125,6 +126,20 @@ void test14_ADTOfTree::midOrderOfLinkBiTree(BiTree t)
 		this->midOrderOfLinkBiTree(t->rchild);
 	}
 }
+
+// 后序遍历
+void test14_ADTOfTree::finallyOrderOfLinkBiTree(BiTree t)
+{
+	// 左，右，根
+	if (t != NULL)
+	{
+		this->finallyOrderOfLinkBiTree(t->lchild);
+		this->finallyOrderOfLinkBiTree(t->rchild);
+		this->printTreeRootElem(t);
+	}
+}
+
+// 层序遍历
 
 // 中序 - 非递归
 // 借助栈，先扫描左子树，一一入栈，
@@ -134,8 +149,9 @@ void test14_ADTOfTree::midOrderOfLinkBiTree2(BiTree t)
 	test12_ADTOfStack* test12 = new test12_ADTOfStack();
 	SqStack newStack;
 	test12->initStack(newStack);
+
 	BiTree p = t; // p是遍历指针
-	while (p || !test12->isStackEmpty(newStack)) // 栈不空或p不空时循环
+	while (p || !test12->isStackEmpty(newStack)) // 栈不空或p树不空时循环
 	{
 		if (p) // 根指针进栈，遍历左子树
 		{
@@ -151,16 +167,6 @@ void test14_ADTOfTree::midOrderOfLinkBiTree2(BiTree t)
 	}
 }
 
-// 后序遍历
-void test14_ADTOfTree::finallyOrderOfLinkBiTree(BiTree t)
-{
-	if (t != NULL)
-	{
-		this->finallyOrderOfLinkBiTree(t->lchild);
-		this->finallyOrderOfLinkBiTree(t->rchild);
-		this->printTreeRootElem(t);
-	}
-}
 
 // 层序遍历 - 非递归
 void test14_ADTOfTree::layerOrderOfLinkBiTree(BiTree t)
@@ -170,23 +176,100 @@ void test14_ADTOfTree::layerOrderOfLinkBiTree(BiTree t)
 
 
 // **线索二叉树**
-// 创建线索二叉树
-void test14_ADTOfTree::createThreadBinaryTree()
+// 创建线索二叉树(二叉树线索化) - 根据遍历序列加线索指针，左前右后
+
+
+
+// 中序线索二叉树 - 递归,分开的
+// 主过程
+void test14_ADTOfTree::createMidThreadBinaryTree2(ThreadTree t)
 {
+	// 全局变量pre，指向当前访问节点的前驱
+	ThreadNode* pre = NULL;
+
+	// 中序线索化
+	this->binaryTree2ThreadBinaryTree(t, pre);
 
 }
 
-// 把二叉树线索化 - 中序遍历法
+// 中序线索化二叉树t - 分开的
 void test14_ADTOfTree::binaryTree2ThreadBinaryTree(ThreadTree& p, ThreadTree& pre)
 {
-
+	ThreadTree t;
+	pre = NULL; // pre初始为NULL
+	if (t != NULL) // 非空二叉树才能线索化
+	{
+		this->binaryTreeInThread(t, pre); // 中序线索化二叉树
+		if (pre->rchild == NULL)
+		{
+			pre->rtag = 1; // 处理遍历的最后一个节点
+		}
+	}
 }
 
-// 通过中序遍历建立中序线索二叉树
+// 中序遍历二叉树，一边遍历一边线索化 - 递归
+void test14_ADTOfTree::binaryTreeInThread(ThreadTree t, ThreadTree& pre)
+{
+	if (t != NULL)
+	{
+		this->binaryTreeInThread(t->lchild, pre);
+		this->binaryTreeVisit(t, pre);
+		this->binaryTreeInThread(t->rchild, pre);
+	}
+}
+
+// 访问 <=> 加线索
+void test14_ADTOfTree::binaryTreeVisit(ThreadNode* q, ThreadTree& pre)
+{
+	if (q->lchild == NULL)
+	{
+		q->lchild = pre;
+		q->ltag = 1;
+	}
+	if (pre != NULL && pre->rchild == NULL)
+	{
+		pre->rchild = q;
+		pre->rtag = 1;
+	}
+	pre = q;
+}
+
+// 中序线索化 - 递归法
+// 主过程
 void test14_ADTOfTree::createMidThreadBinaryTree(ThreadTree t)
 {
-
+	ThreadTree pre = NULL;
+	if (t != NULL) // 非空二叉树线索化
+	{
+		this->inThread(t, pre); // 线索化二叉树
+		pre->rchild = NULL; // 处理遍历的最后一个节点
+		pre->rtag = 1;
+	}
 }
+
+// 递归线索化
+void test14_ADTOfTree::inThread(ThreadTree& p, ThreadTree& pre)
+{
+	if (p != NULL)
+	{
+		this->inThread(p->lchild, pre); // 递归，线索化*左*子树
+		if (p->lchild == NULL) //左子树为空，建立前驱线索
+		{
+			p->lchild = pre;
+			p->ltag = 1;
+		}
+		if (pre != NULL && pre->rchild == NULL)
+		{
+			pre->rchild = p; // 建立前驱节点的后继线索
+			pre->rtag;
+		}
+		pre = p; // 标记当前节点成为刚刚访问过的节点
+		this->inThread(p->rchild, pre); // 递归，线索化*右*子树
+	}
+}
+
+
+
 
 // **线索二叉树的遍历**
 // 中序线索二叉树中中序序列下的第一个节点

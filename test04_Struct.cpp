@@ -35,7 +35,7 @@ void test04_Struct::clsMain()
 {
 	// 函数或结构中访问其成员，推荐使用(箭头，表示指向，指针) -> 
 
-	structTe struTe = { 0,0 }; // 使用前要初始化
+	structTe struTe = { 0,0 }; // 使用前要初始化，分配内存
 	structTe* struTe2 = new structTe; // new开辟堆内存
 	struTe2->a = 8;
 	struTe2->b = 8;

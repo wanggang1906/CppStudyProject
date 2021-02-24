@@ -27,7 +27,7 @@
 //		void - 不能用于普通变量的声明和普通的操作，只能用于指针型变量，函数返回值和函数参数
 // @6-指针类型
 //		(类型)*(指针变量) - 用来描述内存地址，并通过提供指针操作来实现与内存相关的程序功能
-//			#1 - <类型>决定了指向的内存空间的大小
+//			#1 - <类型>决定了指向的内存空间的大小(数据类型)
 //			#2 - 指针变量也是一种变量，有着自己的内存空间，该空间上存储的是另一个变量的内存空间
 
 // 自定义数据类型
@@ -128,7 +128,7 @@ void test03_BaseDataType::dataSize() {
 	//std::cout<< 
 
 	// 所有数据类型
-	cout << "type: \t\t" << "************size**************" << endl;
+	cout << "type: \t\t" << "************ size **************" << endl; // /t/t 表示两个tab键
 	cout << "bool: \t\t" << "所占字节数：" << sizeof(bool);
 	cout << "\t最大值：" << (numeric_limits<bool>::max)(); // numeric_limits是C++的模板类，提供基础数据的极值等数学信息，其中的max,min是宏常量
 	cout << "\t\t最小值：" << (numeric_limits<bool>::min)() << endl;
@@ -189,7 +189,7 @@ void test03_BaseDataType::dataSize() {
 	cout << "\t最大值：" << (numeric_limits<string>::max)();
 	cout << "\t最小值：" << (numeric_limits<string>::min)() << endl;
 
-	cout << "type: \t\t" << "************size**************" << endl;
+	cout << "type: \t\t" << "************ size **************" << endl;
 }
 
 

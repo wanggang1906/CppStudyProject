@@ -71,7 +71,7 @@ int main() // 函数头
 // 一个类中只能有一个main函数
 {
 	//char sa = NULL;
-	//scanf("%sa",sa); // C++ 可以使用所有C的标准输入输出函数，好像有错啊
+	//scanf("%sa",sa); // C++ 可以使用所有C的标准输入输出函数，好像有错啊(winC++会对与c相同的函数做一些限制或修改)
 	//printf("%sa", sa);
 	printf("这是主类的 \n");
 	cout << "入口文件的";
@@ -93,6 +93,7 @@ int main() // 函数头
 	//t04me.clsMain();
 
 	// new 开辟堆内存
+	// 类型 变量1，变量2 此种方式定义不同变量类型，存栈中
 	test05_PointTo* te05me = new test05_PointTo();
 	//te05me->classMain();
 

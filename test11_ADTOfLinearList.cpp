@@ -507,3 +507,12 @@ test11_ADTOfLinearList::ElemType test11_ADTOfLinearList::getElement(SqList* L, i
 	printf("查找的第i个元素为：%d\n", L->data[i]);
 	return e;
 }
+
+
+
+
+// 数组和广义表
+
+// 矩阵转置 - 经典算法
+
+// 矩阵转置 - 快速转置算法
